@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Shader Files">
+      <UniqueIdentifier>{24b6cdd6-f8bc-4b20-83df-2c1a0f274c27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Modello">
+      <UniqueIdentifier>{a32c58a2-ee89-4b3a-bd92-cbcc9e2ed1df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controllo">
+      <UniqueIdentifier>{5de7a874-6e4b-46c9-897a-b3815cfab785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tool">
+      <UniqueIdentifier>{b8b64a2a-0fd5-4fa0-a6f7-51fae0743f8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu">
+      <UniqueIdentifier>{b270d139-6e2f-4fc2-b3f8-f580e0a0df91}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="skinned_mesh.cpp">
+      <Filter>Header Files\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Header Files\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
+      <Filter>Header Files\Tool</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="fragment_anim_lights.fs">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="fragment_simple.fs">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="fragment_lights.fs">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="vertex_anim_lights.vs">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="vertex_simple.vs">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="vertex_lights.vs">
+      <Filter>Shader Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shader_s.h">
+      <Filter>Header Files\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Header Files\Modello</Filter>
+    </ClInclude>
+    <ClInclude Include="GameArena.h">
+      <Filter>Header Files\Modello</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files\Controllo</Filter>
+    </ClInclude>
+    <ClInclude Include="update.h">
+      <Filter>Header Files\Controllo</Filter>
+    </ClInclude>
+    <ClInclude Include="globalData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>Header Files\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>Header Files\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="utility.h">
+      <Filter>Header Files\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="updateAnimation.h">
+      <Filter>Header Files\Controllo</Filter>
+    </ClInclude>
+    <ClInclude Include="skinned_mesh.h">
+      <Filter>Header Files\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Header Files\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="button.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="loading.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="pauseMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="prevMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="cube.h">
+      <Filter>Header Files\Modello</Filter>
+    </ClInclude>
+    <ClInclude Include="gameMap.h">
+      <Filter>Header Files\Modello</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
