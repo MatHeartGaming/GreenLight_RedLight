@@ -112,6 +112,7 @@ void game::init() {
 				p->players[i].x = PLAYER_SPOW_X;
 				p->players[i].z = PLAYER_SPOW_Y;
 				p->players[i].animationTime_playerDying = 0;
+				p->players[i].animationTime_playerVictory_1 = 0;
 			}
 
 			int i = 0;

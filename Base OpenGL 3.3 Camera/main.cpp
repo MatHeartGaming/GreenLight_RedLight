@@ -44,6 +44,7 @@ double previousTime = glfwGetTime();
 
 float deltaTime = DELTA_TIME_START;	// time between current frame and last frame
 float lastFrame = LAST_FRAME_START;
+bool isFirstRedLight = true;
 
 GLFWwindow* window;
 
@@ -327,11 +328,11 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 							}
 						}
 
-						if (!gameuno->p->players[i].userControlled) {
+						//if (!gameuno->p->players[i].userControlled) {
 							if ((rand() % 7000) == 0) {
 								gameuno->p->players[i].velocity = 0.5;
 							}
-						}
+						//}
 					}
 					else if (gameuno->doll->animState == 0) { // Moving Forward
 						if (gameuno->p->players[i].velocity > 0) {

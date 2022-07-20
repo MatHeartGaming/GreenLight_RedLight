@@ -19,6 +19,7 @@ struct PlayerData {
 	float velocity = 0;
 
 	float animationTime_playerDying = 0;
+	float animationTime_playerVictory_1 = 0;
 
 	bool move = true;
 	bool running = false;
@@ -26,6 +27,7 @@ struct PlayerData {
 	bool finish = false;
 
 	bool dead = false;
+	bool victory = false;
 };
 
 
@@ -60,6 +62,7 @@ public:
 	SkinnedMesh playerWalking;
 	SkinnedMesh playerStanding;
 	SkinnedMesh playerDying;
+	SkinnedMesh playerVictory_1;
 
 	// tempo per le animazioni
 	float animationTime_playerStanding;
@@ -122,6 +125,7 @@ public:
 	vector<vector <glm::mat4>> tfStop;
 	vector<vector <glm::mat4>> tfRun;
 	vector<vector <glm::mat4>> tfDie;
+	vector<vector <glm::mat4>> tfVictory_1;
 	vector<vector <glm::mat4>> tfWalk;
 
 	bool isApproaching(int a, int b, float dTime);
@@ -149,6 +153,17 @@ void player::loadMeshModel() {
 	playerStanding.loadMesh("animation/player456/Male Standing Pose.dae");
 	playerDying.loadMesh("animation/player456/Dying.dae");
 	playerWalking.loadMesh("animation/player456/Crouched_Walking_in_place.dae");
+
+	int animRand = rand() % 2;
+
+	if (animRand == 0) {
+		playerVictory_1.loadMesh("animation/player456/Victory.dae");
+		cout << "Animazione Standard" << endl;
+	}
+	else {
+		playerVictory_1.loadMesh("animation/player456/Breakdance_Ending.dae");
+		cout << "Animazione Break Dance" << endl;
+	}
 }
 
 void player::initPlayer() {
@@ -176,6 +191,12 @@ void player::initPlayer() {
 		vector <glm::mat4> t1;
 		playerDying.boneTransform(i / 10.0f, t1);
 		tfDie.emplace_back(t1);
+	}
+
+	for (int i = 0; i < 1050; i++) {
+		vector <glm::mat4> t1;
+		playerVictory_1.boneTransform(i / 10.0f, t1);
+		tfVictory_1.emplace_back(t1);
 	}
 }
 
@@ -350,7 +371,7 @@ void player::adjustSpeeds(float dTime) {
 			retries++;
 		}
 
-		if (retries > 20) {
+		if (retries > 40) {
 			break;
 		}
 
@@ -368,15 +389,15 @@ void player::updateKinematics(float dTime) {
 				players[i].animationTime = players[i].animationTime + players[i].velocity * dTime;
 
 				if (players[i].userControlled) {
-					cout << "Z player: " << players[i].z << endl;
+					//cout << "Z player: " << players[i].z << ", X: " << players[i].x << endl;
 				}
 			}
 
-			if (players[i].z < -49) {
+			if (players[i].z < -42) {
 				players[i].move = false;
 				players[i].finish = true;
 				players[i].velocity = 0;
-				players[i].z = -49;
+				players[i].z = -42;
 			}
 		}
 	}
@@ -427,6 +448,17 @@ void player::animate(float dTime) {
 				players[i].animationTime_playerDying = 4;
 			}
 		}
+
+		if (players[i].finish) {
+
+			players[i].animationTime_playerVictory_1 += dTime;
+
+			if (players[i].animationTime_playerVictory_1 > 4) {
+				players[i].animationTime_playerVictory_1 = 4;
+				players[i].victory = true;
+			}
+		}
+
 	}
 
 	updateDynamics(dTime);
@@ -469,10 +501,7 @@ void player::drawPlayers(Shader animShader) {
 
 			model = glm::translate(model, glm::vec3(players[i].x, 0.0f, players[i].z));
 			model = glm::rotate(model, glm::radians(players[i].angle), glm::vec3(0, 1, 0));
-
-			/*if (players[i].userControlled && run) {
-				players[i].animationTime = animationTime_playerRunning;
-			} else */if (players[i].move) {
+			if (players[i].move) {
 				players[i].animationTime = animationTime_playerWalking;
 			}
 			else {
@@ -480,6 +509,7 @@ void player::drawPlayers(Shader animShader) {
 			}
 
 		}
+
 		animShader.setMat4("model", model);
 
 		if (players[i].dead) {
@@ -492,7 +522,7 @@ void player::drawPlayers(Shader animShader) {
 
 			playerDying.render();
 		}
-		else if (players[i].running) {
+		else if (players[i].running && players[i].velocity > 0) {
 			int animSlot = int(players[i].animationTime * 10) % 350;
 
 			glUniformMatrix4fv(glGetUniformLocation(animShader.ID, "bones"),
@@ -511,6 +541,26 @@ void player::drawPlayers(Shader animShader) {
 				glm::value_ptr(tfWalk[animSlot][0]));
 
 			playerWalking.render();
+		}
+		else if (players[i].victory) {
+				int animSlot2 = int(players[i].animationTime * 10) % 350;
+
+				glUniformMatrix4fv(glGetUniformLocation(animShader.ID, "bones"),
+					tfStop[animSlot2].size(),
+					GL_FALSE,
+					glm::value_ptr(tfStop[animSlot2][0]));
+
+				playerStanding.render();
+		}
+		else if (players[i].finish) {
+			int animSlot = int(players[i].animationTime_playerVictory_1 * 10) % 1050;
+
+			glUniformMatrix4fv(glGetUniformLocation(animShader.ID, "bones"),
+				tfVictory_1[animSlot].size(),
+				GL_FALSE,
+				glm::value_ptr(tfVictory_1[animSlot][0]));
+
+			playerVictory_1.render();
 		}
 		else {
 			int animSlot = int(players[i].animationTime * 10) % 350;
