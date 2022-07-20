@@ -3,7 +3,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include "game.h"
-#include "gameMap.h"
 #include "player.h"
 #include "GameArena.h"
 #include <vector>

@@ -172,7 +172,6 @@ $(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
   <ItemGroup>
     <ClInclude Include="button.h" />
     <ClInclude Include="game.h" />
-    <ClInclude Include="gameMap.h" />
     <ClInclude Include="globalData.h" />
     <ClInclude Include="loading.h" />
     <ClInclude Include="mainMenu.h" />

@@ -54,7 +54,7 @@ void GameArena::loadMeshModel() {
 	dollHead->loadModel("animation/bambola/Doll_Head.obj");
 	dollBody->loadModel("animation/bambola/Doll.obj");
 	Arena->loadModel("animation/wall2.obj");
-	Arena->loadModel("animation/Floor.obj");
+	Arena->loadModel("animation/Floor2.obj");
 	Arena->loadModel("animation/sky2.obj");
 	Arena->loadModel("animation/tree.obj");
 }
