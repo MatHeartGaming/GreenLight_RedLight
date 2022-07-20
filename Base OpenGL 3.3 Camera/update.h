@@ -3,9 +3,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include "game.h"
-#include "gameMap.h"
 #include "player.h"
-//#include "villain.h"
 #include "mainMenu.h"
 #include "pauseMenu.h"
 

@@ -148,7 +148,7 @@ void player::loadMeshModel() {
 	playerRunning.loadMesh("animation/player456/Running_Slow.dae");
 	playerStanding.loadMesh("animation/player456/Male Standing Pose.dae");
 	playerDying.loadMesh("animation/player456/Dying.dae");
-	playerWalking.loadMesh("animation/player456/Crouched_Walking_30.dae");
+	playerWalking.loadMesh("animation/player456/Crouched_Walking_in_place.dae");
 }
 
 void player::initPlayer() {
@@ -366,6 +366,10 @@ void player::updateKinematics(float dTime) {
 				players[i].x = players[i].x + players[i].velocity * dTime * sin(glm::radians(players[i].angle));
 				players[i].z = players[i].z + players[i].velocity * dTime * cos(glm::radians(players[i].angle));
 				players[i].animationTime = players[i].animationTime + players[i].velocity * dTime;
+
+				if (players[i].userControlled) {
+					cout << "Z player: " << players[i].z << endl;
+				}
 			}
 
 			if (players[i].z < -49) {
@@ -409,8 +413,11 @@ void player::animate(float dTime) {
 					players[i].deadState = 2;
 					deadStatePlay = 0;
 
-					audioEng->setSoundVolume(volumeLevel);
-					audioEng->play2D("audio/Scream.mp3", false);
+					if ((i % 3) == 0) {
+						audioEng->setSoundVolume(volumeLevel);
+						audioEng->play2D("audio/Scream.mp3", false);
+					}
+					
 				}
 			}
 

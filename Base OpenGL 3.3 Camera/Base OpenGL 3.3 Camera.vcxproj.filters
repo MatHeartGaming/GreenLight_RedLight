@@ -119,8 +119,5 @@
     <ClInclude Include="cube.h">
       <Filter>Header Files\Modello</Filter>
     </ClInclude>
-    <ClInclude Include="gameMap.h">
-      <Filter>Header Files\Modello</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

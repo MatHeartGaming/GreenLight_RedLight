@@ -18,7 +18,6 @@
 #include "updateAnimation.h"
 #include "model.h"
 #include "game.h"
-#include "gameMap.h"
 #include "cube.h"
 #include "GameArena.h"
 #include "player.h"
@@ -26,7 +25,6 @@
 #include "mainMenu.h"
 #include "pauseMenu.h"
 #include <irrKlang/irrKlang.h>
-//#include "prevMenu.h"
 
 using namespace glm;
 using namespace std;
@@ -452,15 +450,6 @@ void renderPauseMenu(Shader simpleShader, Shader lightShader) {
 
 	pause_menu->draw(simpleShader, lightShader,gameuno->gameOver);
 }
-
-/*
-void renderName(Shader simpleShader,Shader lightShader,int intro) {
-
-	glClearColor(COLOR_R, COLOR_G, COLOR_B, UNIT);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	prev_menu->draw(simpleShader, lightShader, intro);
-}
-*/
 
 //Render principale che gestisce tutte le altre schermate di render (intro, main_menù, game, pausa_menù)
 void render(Shader simpleShader, Shader lightShader, Shader animShader, Shader simpleShaderMenu, Shader lightShaderMenu)

@@ -1,5 +1,4 @@
 #pragma once
-#include "gameMap.h"
 #include "player.h"
 #include "shader_s.h"
 #include "GameArena.h"
@@ -137,13 +136,6 @@ void game::init() {
 			p->players[userIndex].userControlled = true;
 			p->players[userIndex].x = p->players[userIndex].x;
 			p->players[userIndex].z = p->players[userIndex].z;
-			//p->players[userIndex].anglePlayer = p->players[userIndex].angle;
-
-			//p->players[userIndex].userPlayerIndex = userIndex;
-
-			//gameuno->p->players[i]
-			//p->resetPlayer();
-
 
 		}
 	}
