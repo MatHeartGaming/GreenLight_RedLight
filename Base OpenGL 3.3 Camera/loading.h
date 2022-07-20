@@ -36,7 +36,7 @@ void loading::init() {
 
 	if (loadingInitialized == false) {
 		cout << "loadinginit" << endl;
-		background = new cube(23.0f, 0.0f, 23.0f, glm::radians(90.0f), UNIT, 0.0f, 0.0f, 0.0f, 0.0f, -5.0f);
+		background = new cube(30.0f, 0.0f, 20.0f, glm::radians(90.0f), UNIT, 0.0f, 0.0f, 0.0f, 0.0f, -5.0f);
 
 		loading_boundary = new Model();
 		loading_boundary->loadModel("animation/card/card.obj");

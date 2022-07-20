@@ -32,7 +32,6 @@ using namespace std;
 //Dichiarazione oggetti
 game* gameuno = new game();
 mainMenu* main_menu = new mainMenu();
-//prevMenu* prev_menu = new prevMenu();
 pauseMenu* pause_menu = new pauseMenu();
 update* update_game = new update();
 updateAnimation* update_animation = new updateAnimation();
@@ -360,7 +359,7 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 
 	float x = gameuno->p->players[gameuno->p->userPlayerIndex].x;
 	float z = gameuno->p->players[gameuno->p->userPlayerIndex].z;
-	float z_doll = -100;
+	float z_doll = -43;
 
 	//coordinate camera
 	glm::vec3 pos_camera_mobile(x, MOBILE_CAMERA_OFFSET_Y, z + MOBILE_CAMERA_OFFSET_Z);
@@ -678,7 +677,7 @@ int main()
 		float near_plane = -500.0f, far_plane = 500.0f;
 		//lightProjection = perspective(radians(45.0f), (GLfloat)SHADOW_WIDTH / (GLfloat)SHADOW_HEIGHT, near_plane, far_plane); // note that if you use a perspective projection matrix you'll have to change the light position as the current light position isn't enough to reflect the whole scene
 		lightProjection = ortho(-500.0f, 500.0f, -500.0f, 500.0f, near_plane, far_plane);
-		lightView = lookAt(lightPos, vec3(0.0f), vec3(0.0, 0.0, 1.0));
+		lightView = lookAt(lightPos, vec3(0.0f), vec3(0.0, 1.0, 0.0));
 		lightSpaceMatrix = glm::mat4(UNIT) ;
 
 		animDepthShader.use();

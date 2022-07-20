@@ -92,7 +92,7 @@ void main()
  
     // calculate shadow
     float shadow = ShadowCalculation(FragPosLightSpace);
-    vec3 lighting = (ambient + (1.0 - shadow) * (diffuse + specular)) * color;
+    vec3 lighting = (ambient + (0.7 - shadow) * (diffuse/2 + specular)) * color;
 	//FragColor = mix(texture(myTexture1, TexCoord), texture(myTexture2, TexCoord), 0.6) * vec4(result, 1.0); //direizonale
  
     FragColor = vec4(lighting, 1.0);

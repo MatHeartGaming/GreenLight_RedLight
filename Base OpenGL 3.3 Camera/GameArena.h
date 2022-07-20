@@ -40,7 +40,7 @@ public:
 	void resetVillan();
 	void loadMeshModel();
 
-	irrklang::ISoundEngine* SoundEngine_effect;
+	//irrklang::ISoundEngine* SoundEngine_effect;
 
 };
 
@@ -64,8 +64,8 @@ void GameArena::initVillain() {
 	resetVillan();
 	loadMeshModel();
 
-	SoundEngine_effect = irrklang::createIrrKlangDevice();
-	SoundEngine_effect->setSoundVolume(0);
+	//SoundEngine_effect = irrklang::createIrrKlangDevice();
+	//SoundEngine_effect->setSoundVolume(0);
 }
 
 void GameArena::drawVillain(Shader animShader, Shader simpleShader, Shader lightShader){
@@ -85,7 +85,7 @@ void GameArena::drawVillain(Shader animShader, Shader simpleShader, Shader light
 
 
 	glm::mat4 model = glm::mat4(UNIT);
-	model = glm::translate(model, glm::vec3(0, 0, -43.44));
+	model = glm::translate(model, glm::vec3(-0.11, 0.06, -43.6)); 
 	model = glm::rotate(model, glm::radians(rotationAngle-25.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 	model = glm::scale(model, glm::vec3(UNIT * 0.5, UNIT * 0.5, UNIT * 0.5));
@@ -94,7 +94,7 @@ void GameArena::drawVillain(Shader animShader, Shader simpleShader, Shader light
 
 	model = glm::mat4(UNIT);
 	model = glm::translate(model, glm::vec3(0, 0, -43.44));
-	model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+	model = glm::rotate(model, glm::radians(170.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 	model = glm::scale(model, glm::vec3(UNIT * 0.5, UNIT * 0.5, UNIT * 0.5));
 	lightShader.setMat4("model", model);
 	dollBody->Draw(lightShader);
@@ -113,8 +113,8 @@ void GameArena::animate(float dTime) {
 	}
 
 	if (!start) {
-		SoundEngine_effect->setSoundVolume(volumeLevel);
-		SoundEngine_effect->play2D("audio/RedLight.mp3", false);
+		//SoundEngine_effect->setSoundVolume(volumeLevel);
+		//SoundEngine_effect->play2D("audio/RedLight.mp3", false);
 	}
 
 	start = true;
@@ -136,8 +136,8 @@ void GameArena::animate(float dTime) {
 		if (animTime < 0) {
 			animState = 2;
 			animTime = headRotationTime;
-			SoundEngine_effect->setSoundVolume(volumeLevel);
-			SoundEngine_effect->play2D("audio/GreenLight.mp3", false);
+			//SoundEngine_effect->setSoundVolume(volumeLevel);
+			//SoundEngine_effect->play2D("audio/GreenLight.mp3", false);
 		}
 	}
 	else if (animState == 2) {
@@ -154,8 +154,8 @@ void GameArena::animate(float dTime) {
 		if (animTime < 0) {
 			animState = 0;
 			animTime = headRotationTime;
-			SoundEngine_effect->setSoundVolume(volumeLevel);
-			SoundEngine_effect->play2D("audio/RedLight.mp3", false);
+			//SoundEngine_effect->setSoundVolume(volumeLevel);
+			//SoundEngine_effect->play2D("audio/RedLight.mp3", false);
 		}
 	}
 
