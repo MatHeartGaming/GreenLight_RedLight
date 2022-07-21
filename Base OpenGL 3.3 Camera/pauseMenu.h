@@ -19,6 +19,7 @@ public:
 	cube* background;
 	unsigned int texture_background;
 	unsigned int texture_gameover;
+	unsigned int texture_you_win;
 
 
 	bool buttonClicked; //true quando l'utente clicca un bottone del menu
@@ -27,7 +28,7 @@ public:
 
 	void init();
 	void setShadersProperties(Shader simpleShader, Shader lightShader);
-	void draw(Shader simpleShader, Shader lightShader, bool gameover);
+	void draw(Shader simpleShader, Shader lightShader, bool gameover, bool youWin);
 	void drawGameOver(Shader simpleShader);
 	void setMousePoint(glm::vec3 w) {
 		mousePoint = w;
@@ -106,39 +107,29 @@ void pauseMenu::setShadersProperties(Shader simpleShader, Shader lightShader) {
 	lightShader.setVec3("light.ambient", 0.5f, 0.5f, 0.5f);
 	lightShader.setVec3("light.diffuse", 0.7f, 0.7f, 0.7f);
 	lightShader.setVec3("light.specular", 0.0f, 0.0f, 0.0f);
-	/*
-	lightShader.setVec3("light.position", glm::vec3(0.0f, 5.0f, 100.0f));
-	lightShader.setVec3("light.ambient", 0.5f, 0.5f, 0.5f);
-	lightShader.setVec3("light.diffuse", 0.7f, 0.7f, 0.7f);
-	lightShader.setVec3("light.specular", UNIT, UNIT, UNIT);
-	lightShader.setVec3("colormodel", 0.0f, 0.0f, 0.0f);
-
-	glm::mat4 lightProjection, lightView;
-	glm::mat4 lightSpaceMatrix;
-	lightProjection = glm::ortho(-10.0f, 10.0f, -50.0f, 50.0f, -10.0f, 10.0f);
-
-	lightView = glm::lookAt(glm::vec3(0.0f, 5.0f, 100.0f), glm::vec3(0.0f), glm::vec3(0.0, 1.0, 0.0));
-
-	lightSpaceMatrix = lightProjection * lightView;
-	lightShader.setMat4("lightSpaceMatrix", lightSpaceMatrix);
-	lightShader.setVec3("lightPos", glm::vec3(0.0f, 5.0f, 100.0f));
-	*/
 }
 
-void pauseMenu::draw(Shader simpleShader, Shader lightShader, bool gameover) {
+void pauseMenu::draw(Shader simpleShader, Shader lightShader, bool gameover, bool youWin) {
 	setShadersProperties(simpleShader, lightShader);
 
 
-	if (gameover == false) {
+	if (!gameover) {
 		returnGame->drawButton(lightShader);
+		background->drawCube(simpleShader, texture_background);
+	}
+	else if (youWin) {
+		cout << "You Win" << endl;
+		drawGameOver(simpleShader);
+		background->drawCube(simpleShader, texture_you_win);
 	}
 	else {
+		cout << "Game over" << endl;
 		drawGameOver(simpleShader);
+		background->drawCube(simpleShader, texture_gameover);
 	}
 
 	goToMainMenu->drawButton(lightShader);
 	quit->drawButton(lightShader);
-	background->drawCube(simpleShader, texture_background);
 
 }
 

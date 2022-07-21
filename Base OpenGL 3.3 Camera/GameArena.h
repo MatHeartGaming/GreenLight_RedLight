@@ -22,13 +22,13 @@ public:
 	float headRotationTime = 2;
 
 	float rotationAngle;  
-	float volumeLevel = 0.5;
+	float volumeLevel = 1.0;
 	bool start = false;
 
 	//Texture barra vita
 	 unsigned int textureShadow;
 
-	 float startTime = 20;
+	 float startTime = 30;
 	 float curTime = 0;
 
 	//Prototipi
@@ -65,7 +65,8 @@ void GameArena::initVillain() {
 	loadMeshModel();
 
 	SoundEngine_effect = irrklang::createIrrKlangDevice();
-	SoundEngine_effect->setSoundVolume(0);
+	SoundEngine_effect->setSoundVolume(1.0);
+	SoundEngine_effect->play2D("audio/squid_game_rules.mp3", false);
 }
 
 void GameArena::drawVillain(Shader animShader, Shader simpleShader, Shader lightShader){

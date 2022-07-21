@@ -109,6 +109,9 @@ void game::init() {
 				p->players[i].move = false;
 				p->players[i].running = false;
 				p->players[i].dead = false;
+				p->players[i].victory = false;
+				p->players[i].finish = false;
+				p->players[i].velocity = 0;
 				p->players[i].x = PLAYER_SPOW_X;
 				p->players[i].z = PLAYER_SPOW_Y;
 				p->players[i].animationTime_playerDying = 0;
@@ -138,8 +141,10 @@ void game::init() {
 			p->players[userIndex].x = p->players[userIndex].x;
 			p->players[userIndex].z = p->players[userIndex].z;
 
+			doll->resetVillan();
 		}
 	}
+
 
 }
 

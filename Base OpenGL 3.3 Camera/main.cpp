@@ -32,7 +32,6 @@ using namespace std;
 //Dichiarazione oggetti
 game* gameuno = new game();
 mainMenu* main_menu = new mainMenu();
-//prevMenu* prev_menu = new prevMenu();
 pauseMenu* pause_menu = new pauseMenu();
 update* update_game = new update();
 updateAnimation* update_animation = new updateAnimation();
@@ -126,7 +125,7 @@ void processInput(GLFWwindow* window)
 			if (buttonEsc == false) {
 				buttonEsc = true;
 				if (gameuno->gamePause == false) {
-					gameuno->gamePause = true; 
+					gameuno->gamePause = true;
 				}
 				else {
 					if (gameuno->gameOver == false) {
@@ -321,11 +320,16 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 			if (!gameuno->p->players[i].dead) {
 				if (!gameuno->p->players[i].finish) {
 					if (gameuno->doll->animState == 1) { // Forward
-						if (gameuno->p->players[i].velocity > 0 && !gameuno->p->players[i].userControlled) {
-							if (gameuno->p->players[i].z > -38.5) {
+						if (gameuno->p->players[i].velocity > 0) {
+							if (gameuno->p->players[i].z > -42 && !gameuno->p->players[i].userControlled) {
 								gameuno->p->players[i].dead = true;
 								gameuno->p->players[i].move = false;
 							}
+							else if (gameuno->p->players[i].userControlled && gameuno->p->players[i].z > -42 && (muoviGiu || muoviSu || muoviSx || moveDx)) {
+								gameuno->p->players[i].dead = true;
+								gameuno->p->players[i].move = false;
+							}
+							isFirstRedLight = false;
 						}
 
 						//if (!gameuno->p->players[i].userControlled) {
@@ -336,7 +340,7 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 					}
 					else if (gameuno->doll->animState == 0) { // Moving Forward
 						if (gameuno->p->players[i].velocity > 0) {
-							if (gameuno->p->players[i].z > -38.5) {
+							if (gameuno->p->players[i].z > -42) {
 								gameuno->p->players[i].move = false;
 							}
 						}
@@ -449,7 +453,21 @@ void renderPauseMenu(Shader simpleShader, Shader lightShader) {
 		previousTime = currentTime;
 	}
 
-	pause_menu->draw(simpleShader, lightShader,gameuno->gameOver);
+	bool youWin = false;
+	bool gameOver = false;
+	for (int i = 0; i < 456; i++) {
+		if (gameuno->p->players[i].userControlled && gameuno->p->players[i].dead) {
+			youWin = false;
+			gameOver = true;
+			break;
+		}
+		else if(gameuno->p->players[i].userControlled && gameuno->p->players[i].victory){
+			youWin = true;
+			gameOver = true;
+			break;
+		}
+	}
+	pause_menu->draw(simpleShader, lightShader, gameOver, youWin);
 }
 
 //Render principale che gestisce tutte le altre schermate di render (intro, main_menù, game, pausa_menù)
@@ -466,6 +484,7 @@ void render(Shader simpleShader, Shader lightShader, Shader animShader, Shader s
 	} else {
 	*/
 		if (!gameuno->inGame && !gameuno->loadingGame->isLoading) {
+			main_menu->music->setSoundVolume(1.0);
 			renderMainMenu(simpleShaderMenu, lightShaderMenu);
 		}
 		else if (!gameuno->inGame && gameuno->loadingGame->isLoading && !gameuno->loadingGame->drawLoadingBar) {
@@ -479,9 +498,15 @@ void render(Shader simpleShader, Shader lightShader, Shader animShader, Shader s
 			gameuno->loadingGame->statusLoading++;
 		}
 		else if (gameuno->inGame && !gameuno->loadingGame->isLoading && !gameuno->gamePause) {
+			main_menu->music->setSoundVolume(0.1);
 			renderGame(simpleShader, lightShader, animShader);
 		}
+		else if (gameuno->inGame && !gameuno->loadingGame->isLoading && gameuno->gameOver) {
+			main_menu->music->setSoundVolume(1.0);
+			renderPauseMenu(simpleShader, lightShader);
+		}
 		else if (gameuno->inGame && !gameuno->loadingGame->isLoading && gameuno->gamePause) {
+			main_menu->music->setSoundVolume(1.0);
 			renderPauseMenu(simpleShader, lightShader);
 		}
 	//}
@@ -489,7 +514,6 @@ void render(Shader simpleShader, Shader lightShader, Shader animShader, Shader s
 
 //Inizializza i menù
 void init() {
-
 	main_menu->init();
 	pause_menu->init();
 }
@@ -572,7 +596,11 @@ int main()
 
 	main_menu->texture_splash = loadtexture("texture/SplashScreen.png", false, false);
 	main_menu->texture_background = loadtexture("texture/MenuSquidGame.jpg", false, false);
+
+	//Pause menu textures
 	pause_menu->texture_background = main_menu->texture_background;
+	pause_menu->texture_gameover = loadtexture("texture/gameover.png", true, false);
+	pause_menu->texture_you_win = loadtexture("texture/you_win.jpg", false, false);
 
 	// tell stb_image.h to flip loaded texture's on the y-axis (before loading model).
 	stbi_set_flip_vertically_on_load(false);
