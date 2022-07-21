@@ -48,6 +48,7 @@ public:
 
 	float collisionDist = 1;
 	float acceleration = 1 / 2.34f;
+	float acceleration_Run = 1 / 1.5f;
 
 	float anglePlayer;
 
@@ -291,21 +292,27 @@ void player::updateDynamics(float dTime) {
 	for (int i = 0; i < 456; i++) {
 		if (!players[i].dead) {
 			if (players[i].running) {
-				float vLim = (0.6 + 0.4 * (rand() % 100) / 50.0f);
+				float vLim = (0.6 + 0.4 * (rand() % 100) / 10.0f);
 				if (players[i].velocity < vLim) {
-					players[i].velocity += acceleration * dTime * (0.75 + 0.5 * (rand() % 100) / 50.0f);
+					players[i].velocity += acceleration_Run * dTime * (0.75 + 0.5 * (rand() % 100) / 10.0f);
 				}
 			} else if (players[i].move) {
 				float vLim = (0.6 + 0.4 * (rand() % 100) / 100.0f);
-				if (players[i].velocity < vLim) {
+				if (players[i].velocity < vLim && !players[i].userControlled) {
 					players[i].velocity += acceleration * dTime * (0.75 + 0.5 * (rand() % 100) / 100.0f);
+				}
+				else if (players[i].velocity < vLim && players[i].userControlled) {
+					players[i].velocity += acceleration_Run * dTime* (0.75 + 0.5 * (rand() % 100) / 10.0f);
 				}
 				else {
 					players[i].velocity -= acceleration * dTime * (0.75 + 0.5 * (rand() % 100) / 100.0f);
 				}
 			}
-			else if (players[i].velocity > 0) {
+			else if (players[i].velocity > 0 && !players[i].userControlled) {
 				players[i].velocity -= acceleration * dTime * (0.75 + 0.5 * (rand() % 100) / 100.0f);
+			}
+			else if (players[i].velocity > 0 && players[i].userControlled) {
+				players[i].velocity = 0;
 			}
 		}
 	}
