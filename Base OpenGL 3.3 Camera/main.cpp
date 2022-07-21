@@ -590,8 +590,6 @@ int main()
 	glEnable(GL_DEPTH_TEST);
 
 	// caricamento texture
-	gameuno->loadingGame->texture_statusbar = loadtexture("texture/loadingBar.png", true, true);
-	gameuno->loadingGame->texture_boundary = loadtexture("texture/texture_boundary.png", true, true);
 	gameuno->loadingGame->texture_background = loadtexture("texture/Squid_loading.jpg", false, false);
 
 	main_menu->texture_splash = loadtexture("texture/SplashScreen.png", false, false);
