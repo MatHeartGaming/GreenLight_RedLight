@@ -38,7 +38,7 @@ public:
 		doll = new GameArena();
 
 		loadingGame = new loading();
-		startGameSoundtrack = false;
+		startGameSoundtrack = true;
 	};
 
 	// -- Prototipi -- //
@@ -207,7 +207,7 @@ void game::drawArrow(Shader simpleShader) {
 	glm::mat4 model = glm::mat4(UNIT);
 	model = glm::mat4(UNIT);
 	model = glm::translate(model, glm::vec3(x, 2.1f, z)); // PASSARE COORDINATE PLAYER
-	model = glm::rotate(model, 90.0f, glm::vec3(1.0f, 0.0f, 0.0f)); // arrow rotate on z axis 
+	model = glm::rotate(model, 90.0f, glm::vec3(1.0f, 0.0f, 0.0f)); // arrow rotate on x axis 
 	model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));
 	simpleShader.setMat4("model", model);
 	arrow->Draw(simpleShader);
