@@ -55,5 +55,4 @@ C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Ca
 C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(413,45): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
 C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(501,40): warning C4305: 'argomento': troncamento da 'double' a 'irrklang::ik_f32'
 C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(692,36): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
-  LINK : C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\x64\Debug\GreenLightRedLight.exe non trovato o non compilato dall'ultimo collegamento incrementale; verrà eseguito il collegamento completo
   Base OpenGL 3.3 Camera.vcxproj -> C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\x64\Debug\GreenLightRedLight.exe
