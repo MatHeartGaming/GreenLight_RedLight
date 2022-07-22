@@ -197,7 +197,7 @@ void game::setShadersProperties(Shader simpleShader, Shader lightShader, Shader 
 	//light per la mappa
 	lightShader.setVec3("light.position", lightPos);
 	lightShader.setVec3("light.ambient", 0.5f, 0.5f, 0.5f);
-	lightShader.setVec3("light.diffuse", 0.7f, 0.7f, 0.7f);
+	lightShader.setVec3("light.diffuse", 0.3f, 0.3f, 0.3f);
 	lightShader.setVec3("light.specular", UNIT, UNIT, UNIT);
 	lightShader.setVec3("colormodel", UNIT, UNIT, UNIT);
 

@@ -17,10 +17,10 @@ unsigned int SCR_WIDTH = 1024;
 unsigned int SCR_HEIGHT = 576;
 
 // -- CAMERA -- //
-glm::vec3 lightPos(-3.0f, 20.0f, 0.0f); //posizione luce
-const float MOBILE_CAMERA_OFFSET_Y = 3.0f;
+glm::vec3 lightPos(-3.0f, 25.0f, 0.0f); //posizione luce
+const float MOBILE_CAMERA_OFFSET_Y = 4.0f;
 const float MOBILE_CAMERA_OFFSET_Z = 10.0f;
-const float MOBILE_CAMERA_AT_Y = 1.5f;
+const float MOBILE_CAMERA_AT_Y = 0.5f;
 
 const float UP_X = 0.0f;
 const float UP_Y = 1.0f;

@@ -46,4 +46,7 @@ C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3
 C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(422,45): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
 C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(695,36): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
   LINK : è stata specificata l'opzione /LTCG ma non è richiesta la generazione del codice; rimuovere /LTCG dalla riga di comando del collegamento per migliorare le prestazioni del linker
+texture.obj : warning LNK4099: impossibile trovare il PDB 'vc142.pdb' con 'texture.obj' o in 'C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Release\vc142.pdb'; oggetto collegato senza informazioni di debug
+skinned_mesh.obj : warning LNK4099: impossibile trovare il PDB 'vc142.pdb' con 'skinned_mesh.obj' o in 'C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Release\vc142.pdb'; oggetto collegato senza informazioni di debug
+glad.obj : warning LNK4099: impossibile trovare il PDB 'vc142.pdb' con 'glad.obj' o in 'C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Release\vc142.pdb'; oggetto collegato senza informazioni di debug
   Base OpenGL 3.3 Camera.vcxproj -> C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Release\GreenLightRedLight.exe

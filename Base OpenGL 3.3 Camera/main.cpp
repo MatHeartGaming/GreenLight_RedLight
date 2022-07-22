@@ -646,7 +646,7 @@ int main()
 
 	// configure depth map FBO
    // -----------------------
-	const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 10240;
+	const unsigned int SHADOW_WIDTH = 2048, SHADOW_HEIGHT = 2048;
 	unsigned int depthMapFBO;
 	glGenFramebuffers(1, &depthMapFBO);
 	// create depth texture
@@ -674,7 +674,7 @@ int main()
 
 	glm::mat4 lightProjection, lightView;
 	glm::mat4 lightSpaceMatrix;
-	lightProjection = glm::ortho(-10.0f, 10.0f, -50.0f, 50.0f, 10.0f, 27.0f);
+	lightProjection = glm::ortho(-10.0f, 10.0f, -49.0f, 49.0f, -50.0f, 27.0f);
 	lightView = glm::lookAt(lightPos, glm::vec3(0.0f), glm::vec3(0.0, 0.0, 1.0));
 	lightSpaceMatrix = lightProjection * lightView;
 	animationShader.setMat4("lightSpaceMatrix", lightSpaceMatrix);

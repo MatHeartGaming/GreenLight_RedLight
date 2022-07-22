@@ -15,6 +15,7 @@ public:
 	Model* dollHead = new Model();
 	Model* dollBody = new Model();
 	Model* Arena = new Model();
+	Model* Arena2 = new Model();
 
 	int animState = 0;
 	float animTime = 0;
@@ -57,8 +58,8 @@ void GameArena::loadMeshModel() {
 	Arena->loadModel("animation/Floor2.obj");
 	Arena->loadModel("animation/sky2.obj");
 	Arena->loadModel("animation/tree.obj");
-	Arena->loadModel("animation/guard/guard.obj");
-	Arena->loadModel("animation/guard/guard1.obj");
+	Arena2->loadModel("animation/guard/guard.obj");
+	Arena2->loadModel("animation/guard/guard1.obj");
 
 }
 
@@ -78,7 +79,7 @@ void GameArena::drawDoll(Shader animShader, Shader simpleShader, Shader lightSha
 
 	glm::mat4 lightProjection, lightView;
 	glm::mat4 lightSpaceMatrix;
-	lightProjection = glm::ortho(-10.0f, 10.0f, -50.0f, 50.0f, 10.0f, 27.0f);
+	lightProjection = glm::ortho(-10.0f, 10.0f, -49.0f, 49.0f, -50.0f, 27.0f);
 	
 	lightView = glm::lookAt(lightPos, glm::vec3(0.0f), glm::vec3(0.0, 0.0, 1.0));
 	
@@ -86,20 +87,24 @@ void GameArena::drawDoll(Shader animShader, Shader simpleShader, Shader lightSha
 	lightShader.setMat4("lightSpaceMatrix", lightSpaceMatrix);
 	lightShader.setVec3("lightPos", lightPos);
 
-
-
 	glm::mat4 model = glm::mat4(UNIT);
-	//model = glm::translate(model, glm::vec3(0, 0, -43.44));
-	model = glm::translate(model, glm::vec3(-0.11, 0.06, -43.6));
-	model = glm::rotate(model, glm::radians(rotationAngle-25.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
-	model = glm::scale(model, glm::vec3(UNIT * 0.5, UNIT * 0.5, UNIT * 0.5));
+	model = glm::mat4(UNIT);
+	model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
 	lightShader.setMat4("model", model);
-	dollHead->Draw(lightShader);
+	Arena->Draw(lightShader);
+
+
+	lightShader.use();
+	lightProjection = glm::ortho(-10.0f, 10.0f, -49.0f, 49.0f, 10.0f, 27.0f);
+	lightView = glm::lookAt(lightPos, glm::vec3(0.0f), glm::vec3(0.0, 0.0, 1.0));
+	lightSpaceMatrix = lightProjection * lightView;
+	lightShader.setMat4("lightSpaceMatrix", lightSpaceMatrix);
+	lightShader.setVec3("lightPos", lightPos);
 
 	model = glm::mat4(UNIT);
 	model = glm::translate(model, glm::vec3(0, 0, -43.44));
-	model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+	model = glm::rotate(model, glm::radians(170.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 	model = glm::scale(model, glm::vec3(UNIT * 0.5, UNIT * 0.5, UNIT * 0.5));
 	lightShader.setMat4("model", model);
 	dollBody->Draw(lightShader);
@@ -107,7 +112,18 @@ void GameArena::drawDoll(Shader animShader, Shader simpleShader, Shader lightSha
 	model = glm::mat4(UNIT);
 	model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
 	lightShader.setMat4("model", model);
-	Arena->Draw(lightShader);
+	Arena2->Draw(lightShader);
+
+	//model = glm::translate(model, glm::vec3(0, 0, -43.44));
+	model = glm::translate(model, glm::vec3(-0.11, 0.06, -43.6));
+	model = glm::rotate(model, glm::radians(rotationAngle - 25.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+
+	model = glm::scale(model, glm::vec3(UNIT * 0.5, UNIT * 0.5, UNIT * 0.5));
+	lightShader.setMat4("model", model);
+	dollHead->Draw(lightShader);
+
+
+
 }
 
 void GameArena::animate(float dTime) {
