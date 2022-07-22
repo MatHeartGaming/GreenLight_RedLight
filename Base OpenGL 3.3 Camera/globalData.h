@@ -1,4 +1,5 @@
 #pragma once
+#include "game.h"
 //GAME SETTINGS
 
 //TIME
@@ -25,8 +26,8 @@ const int FIRST_NAMBER = 0;
 const int LAST_NAMBER = 10;
 
 // RESOLUTIONS
-unsigned int SCR_WIDTH = 1024;
-unsigned int SCR_HEIGHT = 576;
+unsigned int SCR_WIDTH = 2560;
+unsigned int SCR_HEIGHT = 1600;
 
 // -- CAMERA -- //
 glm::vec3 lightPos(0.0f, 25.0f, 0.0f); //posizione luce
@@ -54,19 +55,6 @@ const float ANGLE_315 = 315.0f;
 const float ANGLE_90 = 90.0f;
 
 const float ANGLE_OFFSET = 15.0f;
-
-const float SHADOW_OFFSET_Y_PLAYER = 0.02f;
-const float SHADOW_SCALE_PLAYER = 1.4f;
-
-const float OFFSET_SHOT_BAR = 2.22f;
-const float SCALE_OFFSET_SHOT_BAR = 0.03f;
-const float SCALE_SHOT_BAR_Y = 0.01f;
-const float SCALE_SHOT_BAR_Z = 0.10f;
-
-const float OFFSET_POSITION_LIFEBAR = 2.4f;
-const float SCALE_LIFEBARZ = 0.15f;
-
-const float OFFSET_Y_CHESTlIFE_BAR = 1.5f;
 
 // -- DIREZIONI bot (riferimenti per i path) -- //
 const int DIRECTION_RIGHT = 0;
@@ -134,22 +122,6 @@ float BOT_MOVE_STEP = TILE_DIM / 30; // = 0.05; //Incremento dello spostamento d
 float EPSILON_1 = MOVE_STEP / 2;
 float EPSILON_2 = BOT_MOVE_STEP / 100;
 float EPSILON_3 = 0.25f;
-
-const float SCALE_SCORE_X = 2.5f;
-const float SCALE_SCORE_Y = 0.1f;
-const float SCALE_SCORE_Z = 2.5f;
-const float OFFSET_Y_SCORE = 3.0f;
-const float OFFSET_Z_SCORE = 5.0f;
-const float OFFSET_TEN_X = 1.8f;
-const float OFFSET_TEN_Y = 3.0f;
-const float OFFSET_TEN_Z = 5.0f;
-const float SCALE_TEN_X = 0.7f;
-const float SCALE_TEN_Y = 0.1f;
-const float SCALE_TEN_Z = 0.7F;
-const float OFFSET_UNIT_X = 2.5f;
-
-const int STONE1 = 15;
-const int CHEST = 16;
 
 
 // -- OTHERS -- //

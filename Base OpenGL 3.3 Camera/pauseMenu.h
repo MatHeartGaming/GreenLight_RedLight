@@ -118,19 +118,17 @@ void pauseMenu::draw(Shader simpleShader, Shader lightShader, bool gameover, boo
 		background->drawCube(simpleShader, texture_background);
 	}
 	else if (youWin) {
-		cout << "You Win" << endl;
 		drawGameOver(simpleShader);
 		background->drawCube(simpleShader, texture_you_win);
 	}
 	else {
-		cout << "Game over" << endl;
 		drawGameOver(simpleShader);
 		background->drawCube(simpleShader, texture_gameover);
+		returnGame->drawButton(lightShader);
 	}
 
 	goToMainMenu->drawButton(lightShader);
 	quit->drawButton(lightShader);
-
 }
 
 void pauseMenu::drawGameOver(Shader simpleShader) {

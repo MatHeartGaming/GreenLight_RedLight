@@ -43,7 +43,6 @@ double previousTime = glfwGetTime();
 
 float deltaTime = DELTA_TIME_START;	// time between current frame and last frame
 float lastFrame = LAST_FRAME_START;
-bool isFirstRedLight = true;
 
 GLFWwindow* window;
 
@@ -138,6 +137,10 @@ void processInput(GLFWwindow* window)
 			buttonEsc = false;
 		}
 
+		if (!gameuno->doll->start) {
+			return;
+		}
+
 		//To Run!
 		if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS && glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
 			run = true;
@@ -181,10 +184,6 @@ void processInput(GLFWwindow* window)
 		if (glfwGetKey(window, GLFW_KEY_S) == GLFW_RELEASE) {
 			muoviGiu = false;
 		}
-
-		
-
-
 	}
 }
 
@@ -315,9 +314,14 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 
 		gameuno->doll->animate(currentTime - previousTime);
 		gameuno->p->animate(currentTime - previousTime);
-
 		for (int i = 0; i < 456; i++) {
+
 			if (!gameuno->p->players[i].dead) {
+
+				if (!gameuno->doll->start) {
+					gameuno->p->players[i].move = false;
+				}
+
 				if (!gameuno->p->players[i].finish) {
 					if (gameuno->doll->animState == 1) { // Forward
 						if (gameuno->p->players[i].velocity > 0) {
@@ -329,7 +333,6 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 								gameuno->p->players[i].dead = true;
 								gameuno->p->players[i].move = false;
 							}
-							isFirstRedLight = false;
 						}
 
 						//if (!gameuno->p->players[i].userControlled) {
@@ -352,6 +355,12 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 					}
 				}
 			}
+
+			if (gameuno->p->players[i].animationTime_playerVictory_1 >= 4 && gameuno->p->players[i].userControlled) {
+				gameuno->gameOver = true;
+				gameuno->p->players[i].victory = true;
+			}
+
 		}
 
 		// ------- SOUND ------- //
@@ -474,15 +483,7 @@ void renderPauseMenu(Shader simpleShader, Shader lightShader) {
 void render(Shader simpleShader, Shader lightShader, Shader animShader, Shader simpleShaderMenu, Shader lightShaderMenu)
 {
 	currentTime = glfwGetTime();
-/*
-	if(currentTime < TIME_END_FIRST_INTRO){
-		//renderName(simpleShader, lightShader, FIRST_INTRO);
-	}else if (currentTime >= TIME_END_FIRST_INTRO && currentTime < TIME_END_SECOND_INTRO) {
-		//renderName(simpleShader, lightShader, SECOND_INTRO);
-	} else if (currentTime >= TIME_END_SECOND_INTRO && currentTime < TIME_END_LAST_INTRO) {
-		//renderName(simpleShader, lightShader, LAST_INTRO);
-	} else {
-	*/
+
 		if (!gameuno->inGame && !gameuno->loadingGame->isLoading) {
 			main_menu->music->setSoundVolume(1.0);
 			renderMainMenu(simpleShaderMenu, lightShaderMenu);
@@ -509,7 +510,6 @@ void render(Shader simpleShader, Shader lightShader, Shader animShader, Shader s
 			main_menu->music->setSoundVolume(1.0);
 			renderPauseMenu(simpleShader, lightShader);
 		}
-	//}
 }
 
 //Inizializza i menù
@@ -534,7 +534,7 @@ unsigned int loadtexture(std::string filename, bool png, bool flip)
 	// load image, create texture and generate mipmaps
 	int width, height, nrChannels;
 	stbi_set_flip_vertically_on_load(flip); // tell stb_image.h to flip loaded texture's on the y-axis.
-																					// The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
+
 	unsigned char* data = stbi_load(filename.c_str(), &width, &height, &nrChannels, 0);
 	if (data)
 	{
@@ -588,6 +588,8 @@ int main()
 	}
 
 	glEnable(GL_DEPTH_TEST);
+	glfwWindowHint(GLFW_SAMPLES, 8);
+	glEnable(GL_MULTISAMPLE);
 
 	// caricamento texture
 	gameuno->loadingGame->texture_statusbar = loadtexture("texture/loadingBar.png", true, true);
@@ -599,7 +601,7 @@ int main()
 
 	//Pause menu textures
 	pause_menu->texture_background = main_menu->texture_background;
-	pause_menu->texture_gameover = loadtexture("texture/gameover.png", true, false);
+	pause_menu->texture_gameover = loadtexture("texture/squid_coffin.jpg", false, false);
 	pause_menu->texture_you_win = loadtexture("texture/you_win.jpg", false, false);
 
 	// tell stb_image.h to flip loaded texture's on the y-axis (before loading model).
@@ -645,7 +647,7 @@ int main()
 
 	// configure depth map FBO
    // -----------------------
-	const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 10240;
+	const unsigned int SHADOW_WIDTH = 8192, SHADOW_HEIGHT = 8192;
 	unsigned int depthMapFBO;
 	glGenFramebuffers(1, &depthMapFBO);
 	// create depth texture

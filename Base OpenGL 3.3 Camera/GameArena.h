@@ -32,19 +32,19 @@ public:
 	 float curTime = 0;
 
 	//Prototipi
-	void drawVillain(Shader animShader , Shader simpleShader, Shader lightShader);
+	void drawDoll(Shader animShader , Shader simpleShader, Shader lightShader);
 	void animate(float dTime);
 
-	void initVillain();
+	void initDoll();
 
-	void resetVillan();
+	void resetDoll();
 	void loadMeshModel();
 
 	irrklang::ISoundEngine* SoundEngine_effect;
 
 };
 
-void  GameArena::resetVillan() {
+void  GameArena::resetDoll() {
 
 	rotationAngle = 0;
 	animTime = 1;
@@ -59,9 +59,9 @@ void GameArena::loadMeshModel() {
 	Arena->loadModel("animation/tree.obj");
 }
 
-void GameArena::initVillain() {
+void GameArena::initDoll() {
 
-	resetVillan();
+	resetDoll();
 	loadMeshModel();
 
 	SoundEngine_effect = irrklang::createIrrKlangDevice();
@@ -69,7 +69,7 @@ void GameArena::initVillain() {
 	SoundEngine_effect->play2D("audio/squid_game_rules.mp3", false);
 }
 
-void GameArena::drawVillain(Shader animShader, Shader simpleShader, Shader lightShader){
+void GameArena::drawDoll(Shader animShader, Shader simpleShader, Shader lightShader){
 
 	lightShader.use();
 

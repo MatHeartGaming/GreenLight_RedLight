@@ -56,7 +56,6 @@ void updateAnimation::increasePlayer_Walk(player* player) {
 
 	if (moveDx == true || muoviSx == true || muoviSu == true || muoviGiu == true) { //se il player cammina
 		player->animationTime_playerWalking = player->animationTime_playerWalking + 0.1f;  //incremento l'animazione
-
 		if (player->animationTime_playerWalking > 20.0f) {   //quando il player fa il secondo passo
 			player->animationTime_playerWalking = 0.0f;     //resetto il tempo di animazione all'inizio -> ricomincia da
 		}

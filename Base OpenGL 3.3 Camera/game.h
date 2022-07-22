@@ -3,6 +3,7 @@
 #include "shader_s.h"
 #include "GameArena.h"
 #include "loading.h"
+#include "model.h"
 #include <vector>
 
 /*classe game qui vengono gestiti tutte le azioni relative
@@ -14,6 +15,9 @@ public:
 	//Da renderizzare:
 	player* p;					 //PLAYER
 	GameArena* doll;
+
+	Model* modelGameOver = new Model();
+	Model* arrow = new Model();
 
 	bool gameInitialized;
 	bool inGame;
@@ -45,6 +49,8 @@ public:
 	void init(); //inizializza il game
 	void setShadersProperties(Shader simpleShader, Shader lightShader, Shader animShader, glm::mat4 view); //setta le proprietà degli shader
 	void draw(Shader simpleShader, Shader lightShader, Shader animShader, glm::mat4 view);
+	void drawArrow(Shader lightShader);
+	void drawGameOver(Shader lightShader);
 
 	player* getPlayer() {
 		return p;
@@ -72,6 +78,7 @@ public:
 
 void game::init() {
 
+
 	//Se il game non è stato ancora inizializzato
 	if (gameInitialized == false) {
 
@@ -83,7 +90,9 @@ void game::init() {
 			// init PLAYER
 			p->initPlayer();
 			cout << "*** Players: Loaded -> Initialized" << endl;
-			doll->initVillain();
+			doll->initDoll();
+			modelGameOver->loadModel("animation/gameover.obj");
+			arrow->loadModel("animation/triangle/triangle/TRY2.obj");
 		}
 
 		if (loadingGame->statusLoading >= STATUS_LOADING_2 && loadingGame->statusLoading < STATUS_LOADING_5) {
@@ -141,7 +150,7 @@ void game::init() {
 			p->players[userIndex].x = p->players[userIndex].x;
 			p->players[userIndex].z = p->players[userIndex].z;
 
-			doll->resetVillan();
+			doll->resetDoll();
 		}
 	}
 
@@ -200,6 +209,36 @@ void game::setShadersProperties(Shader simpleShader, Shader lightShader, Shader 
 
 }
 
+void game::drawArrow(Shader lightShader) {
+
+	lightShader.use();
+	float x = p->players[p->userPlayerIndex].x;
+	float z = p->players[p->userPlayerIndex].z;
+
+	glm::mat4 model = glm::mat4(UNIT);
+	model = glm::mat4(UNIT);
+	model = glm::translate(model, glm::vec3(x, 2.1f, z)); // PASSARE COORDINATE PLAYER
+	model = glm::rotate(model, 90.0f, glm::vec3(1.0f, 0.0f, 0.0f)); // arrow rotate on x axis 
+	model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));
+	lightShader.setMat4("model", model);
+	arrow->Draw(lightShader);
+}
+
+void game::drawGameOver(Shader lightShader) {
+
+	lightShader.use();
+	float x = p->players[p->userPlayerIndex].x;
+	float z = p->players[p->userPlayerIndex].z;
+
+	glm::mat4 model = glm::mat4(UNIT);
+	model = glm::mat4(UNIT);
+	model = glm::translate(model, glm::vec3(x-1, 3.5f, z));
+	model = glm::rotate(model, 90.0f, glm::vec3(1.0f, 0.0f, 0.0f)); // gameover rotate on x axis 
+	model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+	lightShader.setMat4("model", model);
+	modelGameOver->Draw(lightShader);
+}
+
 void game::draw(Shader simpleShader, Shader lightShader, Shader animShader, glm::mat4 view) {
 	//Setto le proprietà view, projection degli shaders
 	setShadersProperties(simpleShader, lightShader, animShader, view); 
@@ -207,5 +246,9 @@ void game::draw(Shader simpleShader, Shader lightShader, Shader animShader, glm:
 	//DRAW PLAYER
 	p->drawPlayer(simpleShader, animShader, getMousePoint(), lightShader);
 
-	doll->drawVillain(animShader, simpleShader, lightShader);
+	doll->drawDoll(animShader, simpleShader, lightShader);
+	drawArrow(lightShader);
+	if (p->players[p->userPlayerIndex].animationTime_playerDying >= 4) {
+		drawGameOver(lightShader);
+	}
 }

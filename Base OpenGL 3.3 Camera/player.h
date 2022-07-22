@@ -6,7 +6,6 @@
 #include <irrKlang/irrKlang.h>
 
 
-
 struct PlayerData {
 
 	float x = 0;
@@ -378,7 +377,7 @@ void player::adjustSpeeds(float dTime) {
 			retries++;
 		}
 
-		if (retries > 40) {
+		if (retries > 20) {
 			break;
 		}
 
@@ -386,7 +385,6 @@ void player::adjustSpeeds(float dTime) {
 	} while (numUpdates > 0);
 }
 void player::updateKinematics(float dTime) {
-
 	for (int i = 0; i < 456; i++) {
 		if (!players[i].dead) {
 			if (players[i].velocity > 0) {
@@ -453,6 +451,9 @@ void player::animate(float dTime) {
 
 			if (players[i].animationTime_playerDying > 4) {
 				players[i].animationTime_playerDying = 4;
+				if (players[i].userControlled) {
+					//gameuno->gameOver = true;
+				}
 			}
 		}
 
