@@ -56,12 +56,6 @@ public:
 		return p;
 	}
 
-	/*
-	vector <villain*> getSpawnedBotList() {
-		return spawnedBotList;
-	}
-	*/
-
 	glm::vec3 getMousePoint() {
 		return mousePoint;
 	}

@@ -32,7 +32,7 @@ public:
 
 	bool startMenuSoundtrack;  //quando è true si attiva la soundtrack del menu
 
-	irrklang::ISoundEngine* music = irrklang::createIrrKlangDevice();
+	//irrklang::ISoundEngine* music = irrklang::createIrrKlangDevice();
 
 	void init();
 	void setShadersProperties(Shader simpleShader, Shader lightShader);
@@ -127,8 +127,8 @@ void mainMenu::init() {
 
 	background = new cube(2.1f, 2.0f, 1.15f, glm::radians(90.0f), UNIT, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
 
-	music->setSoundVolume(1.0);
-	music->play2D("audio/SquidGameMusic.mp3", true);
+	//music->setSoundVolume(1.0);
+	//music->play2D("audio/SquidGameMusic.mp3", true);
 }
 
 void mainMenu::draw(Shader simpleShader, Shader lightShader, float TimeVal) {
