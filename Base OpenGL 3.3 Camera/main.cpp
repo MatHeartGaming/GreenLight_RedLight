@@ -316,7 +316,7 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 		gameuno->doll->animate(currentTime - previousTime);
 		gameuno->p->animate(currentTime - previousTime);
 
-		for (int i = 0; i < 456; i++) {
+		for (int i = 0; i < N; i++) {
 			if (!gameuno->p->players[i].dead) {
 				if (!gameuno->p->players[i].finish) {
 					if (gameuno->doll->animState == 1) { // Forward
@@ -364,7 +364,7 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 
 	float x = gameuno->p->players[gameuno->p->userPlayerIndex].x;
 	float z = gameuno->p->players[gameuno->p->userPlayerIndex].z;
-	float z_doll = -100;
+	float z_doll = -43;
 
 	//coordinate camera
 	glm::vec3 pos_camera_mobile(x, MOBILE_CAMERA_OFFSET_Y, z + MOBILE_CAMERA_OFFSET_Z);
@@ -455,7 +455,7 @@ void renderPauseMenu(Shader simpleShader, Shader lightShader) {
 
 	bool youWin = false;
 	bool gameOver = false;
-	for (int i = 0; i < 456; i++) {
+	for (int i = 0; i < N; i++) {
 		if (gameuno->p->players[i].userControlled && gameuno->p->players[i].dead) {
 			youWin = false;
 			gameOver = true;
@@ -590,8 +590,6 @@ int main()
 	glEnable(GL_DEPTH_TEST);
 
 	// caricamento texture
-	gameuno->loadingGame->texture_statusbar = loadtexture("texture/loadingBar.png", true, true);
-	gameuno->loadingGame->texture_boundary = loadtexture("texture/texture_boundary.png", true, true);
 	gameuno->loadingGame->texture_background = loadtexture("texture/Squid_loading.jpg", false, false);
 
 	main_menu->texture_splash = loadtexture("texture/SplashScreen.png", false, false);
@@ -706,7 +704,7 @@ int main()
 		float near_plane = -500.0f, far_plane = 500.0f;
 		//lightProjection = perspective(radians(45.0f), (GLfloat)SHADOW_WIDTH / (GLfloat)SHADOW_HEIGHT, near_plane, far_plane); // note that if you use a perspective projection matrix you'll have to change the light position as the current light position isn't enough to reflect the whole scene
 		lightProjection = ortho(-500.0f, 500.0f, -500.0f, 500.0f, near_plane, far_plane);
-		lightView = lookAt(lightPos, vec3(0.0f), vec3(0.0, 0.0, 1.0));
+		lightView = lookAt(lightPos, vec3(0.0f), vec3(0.0, 1.0, 0.0));
 		lightSpaceMatrix = glm::mat4(UNIT) ;
 
 		animDepthShader.use();

@@ -1,3 +1,6 @@
 /.vs
+/.git
 *.exe
-Base OpenGL 3.3 Camera/x64/Debug/main.obj
+*.obj
+*.tlog
+*.log

@@ -38,13 +38,14 @@ public:
 		doll = new GameArena();
 
 		loadingGame = new loading();
-		startGameSoundtrack = false;
+		startGameSoundtrack = true;
 	};
 
 	// -- Prototipi -- //
 	void init(); //inizializza il game
 	void setShadersProperties(Shader simpleShader, Shader lightShader, Shader animShader, glm::mat4 view); //setta le proprietà degli shader
 	void draw(Shader simpleShader, Shader lightShader, Shader animShader, glm::mat4 view);
+	void drawArrow(Shader simpleShader);
 
 	player* getPlayer() {
 		return p;
@@ -105,7 +106,7 @@ void game::init() {
 		if (loadingGame->statusLoading == UNIT) {
 			//resetto il player
 			
-			for (int i = 0; i < 456; i++) {
+			for (int i = 0; i < N; i++) {
 				p->players[i].move = false;
 				p->players[i].running = false;
 				p->players[i].dead = false;
@@ -120,10 +121,10 @@ void game::init() {
 
 			int i = 0;
 			float zPos = 49;
-			while (i < 456) {
+			while (i < N) {
 
 				float xPos = -8.5;
-				while ((xPos < 7.7) && (i < 456)) {
+				while ((xPos < 7.7) && (i < N)) {
 					xPos += 1 + 0.3 * (rand() % 100) / 100.0f;
 
 					p->players[i].x = xPos;
@@ -135,7 +136,7 @@ void game::init() {
 				zPos -= 0.5 + 0.1 * (rand() % 100) / 100.0f;
 			}
 
-			//int userIndex = rand() % 456;
+			//int userIndex = rand() % N;
 			int userIndex = 455;
 			p->players[userIndex].userControlled = true;
 			p->players[userIndex].x = p->players[userIndex].x;
@@ -200,6 +201,23 @@ void game::setShadersProperties(Shader simpleShader, Shader lightShader, Shader 
 
 }
 
+void game::drawArrow(Shader simpleShader) {
+	Model* arrow = new Model();
+	arrow->loadModel("animation/triangle/triangle/TRY2.obj");
+
+	simpleShader.use();
+	float x = p->players[p->userPlayerIndex].x;
+	float z = p->players[p->userPlayerIndex].z;
+
+	glm::mat4 model = glm::mat4(UNIT);
+	model = glm::mat4(UNIT);
+	model = glm::translate(model, glm::vec3(x, 2.1f, z)); // PASSARE COORDINATE PLAYER
+	model = glm::rotate(model, 90.0f, glm::vec3(1.0f, 0.0f, 0.0f)); // arrow rotate on x axis 
+	model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));
+	simpleShader.setMat4("model", model);
+	arrow->Draw(simpleShader);
+}
+
 void game::draw(Shader simpleShader, Shader lightShader, Shader animShader, glm::mat4 view) {
 	//Setto le proprietà view, projection degli shaders
 	setShadersProperties(simpleShader, lightShader, animShader, view); 
@@ -208,4 +226,6 @@ void game::draw(Shader simpleShader, Shader lightShader, Shader animShader, glm:
 	p->drawPlayer(simpleShader, animShader, getMousePoint(), lightShader);
 
 	doll->drawVillain(animShader, simpleShader, lightShader);
+
+	drawArrow(simpleShader);
 }

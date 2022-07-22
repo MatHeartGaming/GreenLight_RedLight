@@ -29,7 +29,7 @@ unsigned int SCR_WIDTH = 1024;
 unsigned int SCR_HEIGHT = 576;
 
 // -- CAMERA -- //
-glm::vec3 lightPos(0.0f, 25.0f, 0.0f); //posizione luce
+glm::vec3 lightPos(0.0f, 20.0f, 0.0f); //posizione luce
 const float MOBILE_CAMERA_OFFSET_Y = 3.0f;
 const float MOBILE_CAMERA_OFFSET_Z = 10.0f;
 const float MOBILE_CAMERA_AT_Y = 1.5f;
@@ -121,6 +121,9 @@ const int STRIDE = 8;
 
 float RENDER_SPEED = 0.03f; //Più è alto e più rallenta; più è basso e più velocizza
 
+
+const int N = 456;
+
 const int DIM = 18*98; //Dimensione floor 20x20
 float TILE_DIM = 1.0; //Dimensione singola mattonella
 
@@ -128,7 +131,7 @@ float ROOM_DIM_X1 = 9.0f;
 float ROOM_DIM_X2 = -9.0f;
 float ROOM_DIM_Z1 = -49.0f;
 float ROOM_DIM_Z2 = 49.0f;
-float MOVE_STEP = TILE_DIM / 4; //era /9		// = 0.1000f; //Incremento dello spostamento del player 
+float MOVE_STEP = TILE_DIM ; //era /9		// = 0.1000f; //Incremento dello spostamento del player 
 float BOT_MOVE_STEP = TILE_DIM / 30; // = 0.05; //Incremento dello spostamento del BOT 
 
 float EPSILON_1 = MOVE_STEP / 2;
