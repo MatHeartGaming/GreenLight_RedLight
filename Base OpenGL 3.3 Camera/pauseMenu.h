@@ -15,7 +15,6 @@ public:
 
 	float xPos, yPos;
 
-	cube* gameOver;
 	cube* background;
 	unsigned int texture_background;
 	unsigned int texture_gameover;
@@ -49,9 +48,7 @@ public:
 void pauseMenu::init() {
 
 	buttonClicked = false;
-	background = new cube(2.1f, 0.0f, 1.15f, glm::radians(90.0f), UNIT, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
-
-	gameOver = new cube(0.0f, 0.0, 2.0f, glm::radians(0.0f), UNIT, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+	background = new cube(1.7f, 0.0f, 1.0f, glm::radians(90.0f), UNIT, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
 
 	returnGame = new button(0.0f, 0.18f, 0.0f, 0.024f, glm::radians(0.0f), UNIT, 0.0f, 0.0f);
 	returnGame->init("models/menu/button_return.dae");
@@ -118,11 +115,11 @@ void pauseMenu::draw(Shader simpleShader, Shader lightShader, bool gameover, boo
 		background->drawCube(simpleShader, texture_background);
 	}
 	else if (youWin) {
-		drawGameOver(simpleShader);
+		//drawGameOver(simpleShader);
 		background->drawCube(simpleShader, texture_you_win);
 	}
 	else {
-		drawGameOver(simpleShader);
+		//drawGameOver(simpleShader);
 		background->drawCube(simpleShader, texture_gameover);
 		returnGame->drawButton(lightShader);
 	}

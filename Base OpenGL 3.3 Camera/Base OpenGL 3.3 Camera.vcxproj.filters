@@ -113,9 +113,6 @@
     <ClInclude Include="pauseMenu.h">
       <Filter>Header Files\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="prevMenu.h">
-      <Filter>Header Files\Menu</Filter>
-    </ClInclude>
     <ClInclude Include="cube.h">
       <Filter>Header Files\Modello</Filter>
     </ClInclude>

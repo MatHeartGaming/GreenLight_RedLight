@@ -601,8 +601,8 @@ int main()
 
 	//Pause menu textures
 	pause_menu->texture_background = main_menu->texture_background;
-	pause_menu->texture_gameover = loadtexture("texture/squid_coffin.jpg", false, false);
-	pause_menu->texture_you_win = loadtexture("texture/you_win.jpg", false, false);
+	pause_menu->texture_gameover = loadtexture("texture/gameover2.png", true, false);
+	pause_menu->texture_you_win = loadtexture("texture/you_win2.jpg", false, false);
 
 	// tell stb_image.h to flip loaded texture's on the y-axis (before loading model).
 	stbi_set_flip_vertically_on_load(false);

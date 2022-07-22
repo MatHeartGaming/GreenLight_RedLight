@@ -86,7 +86,8 @@ void GameArena::drawDoll(Shader animShader, Shader simpleShader, Shader lightSha
 
 
 	glm::mat4 model = glm::mat4(UNIT);
-	model = glm::translate(model, glm::vec3(0, 0, -43.44));
+	//model = glm::translate(model, glm::vec3(0, 0, -43.44));
+	model = glm::translate(model, glm::vec3(-0.11, 0.06, -43.6));
 	model = glm::rotate(model, glm::radians(rotationAngle-25.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 	model = glm::scale(model, glm::vec3(UNIT * 0.5, UNIT * 0.5, UNIT * 0.5));
