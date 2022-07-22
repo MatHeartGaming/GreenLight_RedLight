@@ -57,6 +57,7 @@ void GameArena::loadMeshModel() {
 	Arena->loadModel("animation/Floor2.obj");
 	Arena->loadModel("animation/sky2.obj");
 	Arena->loadModel("animation/tree.obj");
+	Arena->loadModel("animation/guard/guard.obj");
 }
 
 void GameArena::initDoll() {
