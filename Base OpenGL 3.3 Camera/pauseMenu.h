@@ -110,9 +110,12 @@ void pauseMenu::draw(Shader simpleShader, Shader lightShader, bool gameover, boo
 	setShadersProperties(simpleShader, lightShader);
 
 
+	goToMainMenu->drawButton(lightShader);
+	quit->drawButton(lightShader);
 	if (!gameover) {
 		returnGame->drawButton(lightShader);
 		background->drawCube(simpleShader, texture_background);
+
 	}
 	else if (youWin) {
 		//drawGameOver(simpleShader);
@@ -120,8 +123,8 @@ void pauseMenu::draw(Shader simpleShader, Shader lightShader, bool gameover, boo
 	}
 	else {
 		//drawGameOver(simpleShader);
-		background->drawCube(simpleShader, texture_gameover);
 		returnGame->drawButton(lightShader);
+		background->drawCube(simpleShader, texture_gameover);
 	}
 
 	goToMainMenu->drawButton(lightShader);
