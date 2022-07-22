@@ -1,59 +1,57 @@
 ﻿  main.cpp
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\shader_s.h(56,35): warning C4101: 'e': unreferenced local variable
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\mesh.h(84,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(78,20): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(234,45): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(237,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(242,46): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(294,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(296,93): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(299,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(301,90): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(304,92): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(307,90): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(311,89): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(384,29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(431,34): warning C4305: 'argument': truncation from 'double' to 'irrklang::ik_f32'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(530,39): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(540,39): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(550,40): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(560,42): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(570,45): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(580,40): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\game.h(136,47): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\game.h(139,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\game.h(144,48): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\mainMenu.h(62,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\mainMenu.h(88,15): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\mainMenu.h(91,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\pauseMenu.h(62,84): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(169,16): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(170,16): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(172,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(173,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(176,16): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(177,14): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(179,69): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(180,69): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(64,16): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(69,16): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(74,16): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(79,16): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(84,16): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(89,16): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(107,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(108,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(110,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(111,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(250,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(251,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(253,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(254,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(315,38): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(316,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(410,10): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(422,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(502,40): warning C4305: 'argument': truncation from 'double' to 'irrklang::ik_f32'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(696,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
-  Base OpenGL 3.3 Camera.vcxproj -> C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\x64\Release\GreenLightRedLight.exe
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\shader_s.h(56,35): warning C4101: 'e': variabile locale senza riferimenti
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\mesh.h(84,1): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(78,20): warning C4305: 'inizializzazione': troncamento da 'double' a 'float'
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(234,45): warning C4244: '+=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(237,24): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(242,46): warning C4244: '-=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(294,16): warning C4244: 'inizializzazione': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(296,93): warning C4244: '+=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(299,16): warning C4244: 'inizializzazione': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(301,90): warning C4244: '+=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(304,92): warning C4244: '+=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(307,90): warning C4244: '-=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(311,89): warning C4244: '-=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(384,29): warning C4267: '=': conversione da 'size_t' a 'int'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(529,39): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(539,39): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(549,40): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(559,42): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(569,45): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(579,40): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\game.h(130,47): warning C4244: '+=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\game.h(133,29): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\game.h(138,48): warning C4244: '-=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\mainMenu.h(62,18): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\mainMenu.h(88,15): warning C4305: '=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\mainMenu.h(91,16): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\pauseMenu.h(59,84): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(169,16): warning C4305: '=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(170,16): warning C4305: '=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(172,32): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(173,31): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(176,16): warning C4305: '=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(177,14): warning C4305: '=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(179,69): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(180,69): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(64,16): warning C4305: '+=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(69,16): warning C4305: '-=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(74,16): warning C4305: '+=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(79,16): warning C4305: '-=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(84,16): warning C4305: '+=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(89,16): warning C4305: '-=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(107,23): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(108,23): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(110,24): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(111,24): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(250,20): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(251,20): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(253,21): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(254,21): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(315,38): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(316,35): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(410,10): warning C4244: 'argomento': conversione da 'double' a 'unsigned int'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(422,45): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(695,36): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+  LINK : è stata specificata l'opzione /LTCG ma non è richiesta la generazione del codice; rimuovere /LTCG dalla riga di comando del collegamento per migliorare le prestazioni del linker
+  Base OpenGL 3.3 Camera.vcxproj -> C:\Users\Rocchina Romano\Documents\GitHub\GreenLight_RedLight\x64\Release\GreenLightRedLight.exe

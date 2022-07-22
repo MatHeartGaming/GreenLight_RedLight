@@ -314,7 +314,7 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 
 		gameuno->doll->animate(currentTime - previousTime);
 		gameuno->p->animate(currentTime - previousTime);
-		for (int i = 0; i < 456; i++) {
+		for (int i = 0; i < N; i++) {
 
 			if (!gameuno->p->players[i].dead) {
 
@@ -464,7 +464,7 @@ void renderPauseMenu(Shader simpleShader, Shader lightShader) {
 
 	bool youWin = false;
 	bool gameOver = false;
-	for (int i = 0; i < 456; i++) {
+	for (int i = 0; i < N; i++) {
 		if (gameuno->p->players[i].userControlled && gameuno->p->players[i].dead) {
 			youWin = false;
 			gameOver = true;
@@ -592,8 +592,7 @@ int main()
 	glEnable(GL_MULTISAMPLE);
 
 	// caricamento texture
-	gameuno->loadingGame->texture_statusbar = loadtexture("texture/loadingBar.png", true, true);
-	gameuno->loadingGame->texture_boundary = loadtexture("texture/texture_boundary.png", true, true);
+	
 	gameuno->loadingGame->texture_background = loadtexture("texture/Squid_loading.jpg", false, false);
 
 	main_menu->texture_splash = loadtexture("texture/SplashScreen.png", false, false);
@@ -647,7 +646,7 @@ int main()
 
 	// configure depth map FBO
    // -----------------------
-	const unsigned int SHADOW_WIDTH = 8192, SHADOW_HEIGHT = 8192;
+	const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 10240;
 	unsigned int depthMapFBO;
 	glGenFramebuffers(1, &depthMapFBO);
 	// create depth texture

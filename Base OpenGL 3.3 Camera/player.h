@@ -36,7 +36,7 @@ public:
 
 	player() {}
 
-	PlayerData players[456];
+	PlayerData players[N];
 
 	//irrklang::ISoundEngine* audioEng = irrklang::createIrrKlangDevice();
 
@@ -227,10 +227,10 @@ void player::initPlayers() {
 
 	int i = 0;
 	float zPos = 49;
-	while (i < 456) {
+	while (i < N) {
 
 		float xPos = -8.5;
-		while ( (xPos < 7.7) && (i < 456) ) {
+		while ( (xPos < 7.7) && (i < N) ) {
 			xPos += 1 + 0.3 * (rand() % 100) / 100.0f;
 
 			players[i].x = xPos;
@@ -242,7 +242,7 @@ void player::initPlayers() {
 		zPos -= 0.5 + 0.1 * (rand() % 100) / 100.0f;
 	}
 	
-	//int userIndex = rand() % 456;
+	//int userIndex = rand() % N;
 	int userIndex = 455;
 	players[userIndex].userControlled = true;
 	x = players[userIndex].x;
@@ -288,7 +288,7 @@ void player::updateDynamics(float dTime) {
 		}
 	}
 
-	for (int i = 0; i < 456; i++) {
+	for (int i = 0; i < N; i++) {
 		if (!players[i].dead) {
 			if (players[i].running) {
 				float vLim = (0.6 + 0.4 * (rand() % 100) / 10.0f);
@@ -328,13 +328,13 @@ void player::adjustSpeeds(float dTime) {
 
 		numUpdates = 0;
 
-		for (int i = 0; i < 456; i++) {
+		for (int i = 0; i < N; i++) {
 
 			if (players[i].dead) {
 				continue;
 			}
 
-			for (int j = i + 1; j < 456; j++) {
+			for (int j = i + 1; j < N; j++) {
 
 				if (players[j].dead) {
 					continue;
@@ -385,7 +385,7 @@ void player::adjustSpeeds(float dTime) {
 	} while (numUpdates > 0);
 }
 void player::updateKinematics(float dTime) {
-	for (int i = 0; i < 456; i++) {
+	for (int i = 0; i < N; i++) {
 		if (!players[i].dead) {
 			if (players[i].velocity > 0) {
 
@@ -419,7 +419,7 @@ void player::animate(float dTime) {
 		players[userPlayerIndex].angle = anglePlayer;
 	}
 
-	for (int i = 0; i < 456; i++) {
+	for (int i = 0; i < N; i++) {
 		if (players[i].dead) {
 
 			if (players[i].deadState == 0) {
@@ -498,7 +498,7 @@ void player::drawPlayers(Shader animShader) {
 
 	glm::mat4 model = glm::mat4(UNIT);
 
-	for (int i = 0; i <	456; i++) {
+	for (int i = 0; i < N; i++) {
 
 		model = glm::mat4(UNIT);
 		if (!players[i].userControlled) {
