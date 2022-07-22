@@ -316,7 +316,7 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 		gameuno->doll->animate(currentTime - previousTime);
 		gameuno->p->animate(currentTime - previousTime);
 
-		for (int i = 0; i < 456; i++) {
+		for (int i = 0; i < N; i++) {
 			if (!gameuno->p->players[i].dead) {
 				if (!gameuno->p->players[i].finish) {
 					if (gameuno->doll->animState == 1) { // Forward
@@ -455,7 +455,7 @@ void renderPauseMenu(Shader simpleShader, Shader lightShader) {
 
 	bool youWin = false;
 	bool gameOver = false;
-	for (int i = 0; i < 456; i++) {
+	for (int i = 0; i < N; i++) {
 		if (gameuno->p->players[i].userControlled && gameuno->p->players[i].dead) {
 			youWin = false;
 			gameOver = true;

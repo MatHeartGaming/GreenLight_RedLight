@@ -106,7 +106,7 @@ void game::init() {
 		if (loadingGame->statusLoading == UNIT) {
 			//resetto il player
 			
-			for (int i = 0; i < 456; i++) {
+			for (int i = 0; i < N; i++) {
 				p->players[i].move = false;
 				p->players[i].running = false;
 				p->players[i].dead = false;
@@ -121,10 +121,10 @@ void game::init() {
 
 			int i = 0;
 			float zPos = 49;
-			while (i < 456) {
+			while (i < N) {
 
 				float xPos = -8.5;
-				while ((xPos < 7.7) && (i < 456)) {
+				while ((xPos < 7.7) && (i < N)) {
 					xPos += 1 + 0.3 * (rand() % 100) / 100.0f;
 
 					p->players[i].x = xPos;
@@ -136,7 +136,7 @@ void game::init() {
 				zPos -= 0.5 + 0.1 * (rand() % 100) / 100.0f;
 			}
 
-			//int userIndex = rand() % 456;
+			//int userIndex = rand() % N;
 			int userIndex = 455;
 			p->players[userIndex].userControlled = true;
 			p->players[userIndex].x = p->players[userIndex].x;

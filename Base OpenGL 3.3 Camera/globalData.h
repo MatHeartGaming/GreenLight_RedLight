@@ -121,6 +121,9 @@ const int STRIDE = 8;
 
 float RENDER_SPEED = 0.03f; //Più è alto e più rallenta; più è basso e più velocizza
 
+
+const int N = 456;
+
 const int DIM = 18*98; //Dimensione floor 20x20
 float TILE_DIM = 1.0; //Dimensione singola mattonella
 
