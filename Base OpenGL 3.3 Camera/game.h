@@ -18,6 +18,7 @@ public:
 
 	Model* modelGameOver = new Model();
 	Model* arrow = new Model();
+	Model* trophy = new Model();
 
 	bool gameInitialized;
 	bool inGame;
@@ -51,6 +52,7 @@ public:
 	void draw(Shader simpleShader, Shader lightShader, Shader animShader, glm::mat4 view);
 	void drawArrow(Shader lightShader);
 	void drawGameOver(Shader lightShader);
+	void drawTrophy(Shader lightShader);
 
 	player* getPlayer() {
 		return p;
@@ -87,6 +89,7 @@ void game::init() {
 			doll->initDoll();
 			modelGameOver->loadModel("animation/gameover.obj");
 			arrow->loadModel("animation/triangle/triangle/TRY2.obj");
+			trophy->loadModel("animation/trophy/trophy.obj");
 		}
 
 		if (loadingGame->statusLoading >= STATUS_LOADING_2 && loadingGame->statusLoading < STATUS_LOADING_5) {
@@ -232,6 +235,21 @@ void game::drawGameOver(Shader lightShader) {
 	modelGameOver->Draw(lightShader);
 }
 
+void game::drawTrophy(Shader lightShader) {
+	lightShader.use();
+	float x = p->players[p->userPlayerIndex].x;
+	float z = p->players[p->userPlayerIndex].z;
+
+	glm::mat4 model = glm::mat4(UNIT);
+	model = glm::mat4(UNIT);
+	model = glm::translate(model, glm::vec3(x, 2.1f, z));
+	//model = glm::rotate(model, 90.0f, glm::vec3(0.0f, 0.0f, 1.0f)); // gameover rotate on x axis 
+	model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+	lightShader.setMat4("model", model);
+	trophy->Draw(lightShader);
+
+}
+
 void game::draw(Shader simpleShader, Shader lightShader, Shader animShader, glm::mat4 view) {
 	//Setto le proprietà view, projection degli shaders
 	setShadersProperties(simpleShader, lightShader, animShader, view); 
@@ -243,5 +261,8 @@ void game::draw(Shader simpleShader, Shader lightShader, Shader animShader, glm:
 	drawArrow(lightShader);
 	if (p->players[p->userPlayerIndex].animationTime_playerDying >= 4) {
 		drawGameOver(lightShader);
+	}
+	if (p->players[p->userPlayerIndex].z <= -42) {
+		drawTrophy(lightShader);
 	}
 }
