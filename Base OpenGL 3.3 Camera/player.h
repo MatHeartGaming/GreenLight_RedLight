@@ -38,7 +38,7 @@ public:
 
 	PlayerData players[N];
 
-	//irrklang::ISoundEngine* audioEng = irrklang::createIrrKlangDevice();
+	irrklang::ISoundEngine* audioEng = irrklang::createIrrKlangDevice();
 
 	//coordinate
 	float x;
@@ -251,8 +251,8 @@ void player::initPlayers() {
 
 	userPlayerIndex = userIndex;
 
-	//audioEng = irrklang::createIrrKlangDevice();
-	//audioEng->setSoundVolume(0);
+	audioEng = irrklang::createIrrKlangDevice();
+	audioEng->setSoundVolume(0);
 }
 
 bool player::isApproaching(int a, int b, float dTime) {
@@ -427,8 +427,8 @@ void player::animate(float dTime) {
 				players[i].deadState = 1;
 
 				if (deadStatePlay == 0) {
-					//audioEng->setSoundVolume(0.8);
-					//audioEng->play2D("audio/Shot.mp3", false);
+					audioEng->setSoundVolume(0.8);
+					audioEng->play2D("audio/Shot.mp3", false);
 
 					deadStatePlay = 1;
 				}
@@ -440,8 +440,8 @@ void player::animate(float dTime) {
 					deadStatePlay = 0;
 
 					if ((i % 3) == 0) {
-						//audioEng->setSoundVolume(volumeLevel);
-						//audioEng->play2D("audio/Scream.mp3", false);
+						audioEng->setSoundVolume(volumeLevel);
+						audioEng->play2D("audio/Scream.mp3", false);
 					}
 					
 				}

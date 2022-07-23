@@ -485,7 +485,7 @@ void render(Shader simpleShader, Shader lightShader, Shader animShader, Shader s
 	currentTime = glfwGetTime();
 
 		if (!gameuno->inGame && !gameuno->loadingGame->isLoading) {
-			//main_menu->music->setSoundVolume(1.0);
+			main_menu->music->setSoundVolume(1.0);
 			renderMainMenu(simpleShaderMenu, lightShaderMenu);
 		}
 		else if (!gameuno->inGame && gameuno->loadingGame->isLoading && !gameuno->loadingGame->drawLoadingBar) {
@@ -499,15 +499,15 @@ void render(Shader simpleShader, Shader lightShader, Shader animShader, Shader s
 			gameuno->loadingGame->statusLoading++;
 		}
 		else if (gameuno->inGame && !gameuno->loadingGame->isLoading && !gameuno->gamePause) {
-			//main_menu->music->setSoundVolume(0.1);
+			main_menu->music->setSoundVolume(0.1);
 			renderGame(simpleShader, lightShader, animShader);
 		}
 		else if (gameuno->inGame && !gameuno->loadingGame->isLoading && gameuno->gameOver) {
-			//main_menu->music->setSoundVolume(1.0);
+			main_menu->music->setSoundVolume(1.0);
 			renderPauseMenu(simpleShader, lightShader);
 		}
 		else if (gameuno->inGame && !gameuno->loadingGame->isLoading && gameuno->gamePause) {
-			//main_menu->music->setSoundVolume(1.0);
+			main_menu->music->setSoundVolume(1.0);
 			renderPauseMenu(simpleShader, lightShader);
 		}
 }

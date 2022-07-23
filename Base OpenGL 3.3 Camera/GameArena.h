@@ -41,7 +41,7 @@ public:
 	void resetDoll();
 	void loadMeshModel();
 
-	//irrklang::ISoundEngine* SoundEngine_effect;
+	irrklang::ISoundEngine* SoundEngine_effect;
 
 };
 
@@ -68,9 +68,9 @@ void GameArena::initDoll() {
 	resetDoll();
 	loadMeshModel();
 
-	//SoundEngine_effect = irrklang::createIrrKlangDevice();
-	//SoundEngine_effect->setSoundVolume(1.0);
-	//SoundEngine_effect->play2D("audio/squid_game_rules.mp3", false);
+	SoundEngine_effect = irrklang::createIrrKlangDevice();
+	SoundEngine_effect->setSoundVolume(1.0);
+	SoundEngine_effect->play2D("audio/squid_game_rules.mp3", false);
 }
 
 void GameArena::drawDoll(Shader animShader, Shader simpleShader, Shader lightShader){
@@ -134,8 +134,8 @@ void GameArena::animate(float dTime) {
 	}
 
 	if (!start) {
-		//SoundEngine_effect->setSoundVolume(volumeLevel);
-		//SoundEngine_effect->play2D("audio/RedLight.mp3", false);
+		SoundEngine_effect->setSoundVolume(volumeLevel);
+		SoundEngine_effect->play2D("audio/RedLight.mp3", false);
 	}
 
 	start = true;
@@ -157,8 +157,8 @@ void GameArena::animate(float dTime) {
 		if (animTime < 0) {
 			animState = 2;
 			animTime = headRotationTime;
-			//SoundEngine_effect->setSoundVolume(volumeLevel);
-			//SoundEngine_effect->play2D("audio/GreenLight.mp3", false);
+			SoundEngine_effect->setSoundVolume(volumeLevel);
+			SoundEngine_effect->play2D("audio/GreenLight.mp3", false);
 		}
 	}
 	else if (animState == 2) {
@@ -175,8 +175,8 @@ void GameArena::animate(float dTime) {
 		if (animTime < 0) {
 			animState = 0;
 			animTime = headRotationTime;
-			//SoundEngine_effect->setSoundVolume(volumeLevel);
-			//SoundEngine_effect->play2D("audio/RedLight.mp3", false);
+			SoundEngine_effect->setSoundVolume(volumeLevel);
+			SoundEngine_effect->play2D("audio/RedLight.mp3", false);
 		}
 	}
 
