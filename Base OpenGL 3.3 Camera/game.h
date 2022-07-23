@@ -88,7 +88,7 @@ void game::init() {
 			cout << "*** Players: Loaded -> Initialized" << endl;
 			doll->initDoll();
 			modelGameOver->loadModel("animation/gameover.obj");
-			arrow->loadModel("animation/triangle/triangle/TRY2.obj");
+			arrow->loadModel("animation/triangle/TRY.obj");
 			trophy->loadModel("animation/trophy/trophy.obj");
 		}
 
