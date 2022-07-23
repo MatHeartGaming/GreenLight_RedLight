@@ -104,7 +104,7 @@ void game::init() {
 
 	//Se il game è già stato inizializzato. Resetto animazioni e posizioni del player e dei bot
 	else if (gameInitialized == true) {
-
+		gameOver = false;
 		if (loadingGame->statusLoading == UNIT) {
 			//resetto il player
 			
@@ -143,7 +143,6 @@ void game::init() {
 			p->players[userIndex].userControlled = true;
 			p->players[userIndex].x = p->players[userIndex].x;
 			p->players[userIndex].z = p->players[userIndex].z;
-
 			doll->resetDoll();
 		}
 	}

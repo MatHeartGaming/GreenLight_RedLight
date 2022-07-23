@@ -393,9 +393,6 @@ void player::updateKinematics(float dTime) {
 				players[i].z = players[i].z + players[i].velocity * dTime * cos(glm::radians(players[i].angle));
 				players[i].animationTime = players[i].animationTime + players[i].velocity * dTime;
 
-				if (players[i].userControlled) {
-					//cout << "Z player: " << players[i].z << ", X: " << players[i].x << endl;
-				}
 			}
 
 			if (players[i].z < -42) {

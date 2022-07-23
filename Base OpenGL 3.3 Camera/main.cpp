@@ -52,6 +52,8 @@ glm::vec3 up(UP_X, UP_Y, UP_Z);
 float xKey = 0;
 float yKey = 0;
 float zKey = 0;
+int deaths = 450;
+int winners = 0;
 
 // Callback input mouse/keyboard
 void processInput(GLFWwindow* window)
@@ -328,10 +330,14 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 							if (gameuno->p->players[i].z > -42 && !gameuno->p->players[i].userControlled) {
 								gameuno->p->players[i].dead = true;
 								gameuno->p->players[i].move = false;
+								deaths++;
+								cout << "Num of deaths: " << deaths << endl;
 							}
 							else if (gameuno->p->players[i].userControlled && gameuno->p->players[i].z > -42 && (muoviGiu || muoviSu || muoviSx || moveDx)) {
 								gameuno->p->players[i].dead = true;
 								gameuno->p->players[i].move = false;
+								deaths++;
+								cout << "Num of deaths: " << deaths << endl;
 							}
 						}
 
@@ -354,11 +360,25 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 						gameuno->p->players[i].move = true;
 					}
 				}
+
+				if (gameuno->p->players[i].z <= -42) {
+					winners++;
+					cout << "Num of winners: " << winners << endl;
+				}
 			}
 
 			if (gameuno->p->players[i].animationTime_playerVictory_1 >= 4 && gameuno->p->players[i].userControlled) {
 				gameuno->gameOver = true;
 				gameuno->p->players[i].victory = true;
+				winners++;
+			}
+
+			if ((winners + deaths) >= 456) {
+				gameuno->gameOver = true;
+				cout << "Game finished!" << endl;
+				cout << "Game finished!" << gameuno->gamePause << endl;
+				deaths = 0;
+				winners = 0;
 			}
 
 		}
@@ -646,7 +666,7 @@ int main()
 
 	// configure depth map FBO
    // -----------------------
-	const unsigned int SHADOW_WIDTH = 2048, SHADOW_HEIGHT = 2048;
+	const unsigned int SHADOW_WIDTH = 4096, SHADOW_HEIGHT = 4096;
 	unsigned int depthMapFBO;
 	glGenFramebuffers(1, &depthMapFBO);
 	// create depth texture
