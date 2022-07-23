@@ -367,6 +367,7 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 			}
 
 			if ((winners + deaths) >= 456) {
+				pause_menu->hasEveryOneWinOrDied = true;
 				gameuno->gameOver = true;
 				deaths = 0;
 				winners = 0;
@@ -418,7 +419,7 @@ void renderMainMenu(Shader simpleShader, Shader lightShader) {
 
 			currentTime = glfwGetTime();
 			srand(currentTime);
-
+			pause_menu->hasEveryOneWinOrDied = false;
 			gameuno->gameOver = false;
 			gameuno->loadingGame->init(); //inizializzo la barra di caricamento 
 			gameuno->loadingGame->isLoading = true; //setto il caricamento a true
@@ -430,9 +431,6 @@ void renderMainMenu(Shader simpleShader, Shader lightShader) {
 	}
 
 	main_menu->draw(simpleShader, lightShader, currentTime);
-
-	
-
 }
 
 void renderLoading(Shader simpleShader) {

@@ -19,6 +19,7 @@ public:
 	unsigned int texture_background;
 	unsigned int texture_gameover;
 	unsigned int texture_you_win;
+	bool hasEveryOneWinOrDied = false;
 
 
 	bool buttonClicked; //true quando l'utente clicca un bottone del menu
@@ -123,7 +124,9 @@ void pauseMenu::draw(Shader simpleShader, Shader lightShader, bool gameover, boo
 	}
 	else {
 		//drawGameOver(simpleShader);
-		returnGame->drawButton(lightShader);
+		if (!hasEveryOneWinOrDied) {
+			returnGame->drawButton(lightShader);
+		}
 		background->drawCube(simpleShader, texture_gameover);
 	}
 
