@@ -300,10 +300,6 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 		else {
 			gameuno->getPlayer()->mouseSxIsSelected = false;
 		}
-		
-		/*if (gameuno->getPlayer()->life <= MIN_LIFE_PLAYER) {
-			gameuno->gameOver = true;
-		}*/
 
 		update_game->calculateAnglePlayer(player); //player rotation
 
@@ -417,7 +413,6 @@ void renderMainMenu(Shader simpleShader, Shader lightShader) {
 		// ------- MOUSE ------- //
 		mouse_position();
 		update_game->cursorMainMenu(main_menu); //update del cursore
-		//update_animation->menuSound(main_menu);
 
 		if (main_menu->startNewGame) { //il flag startNewGame è true (l'utente ha cliccato su play)
 
@@ -447,7 +442,7 @@ void renderLoading(Shader simpleShader) {
 
 	//setto a false la soundtrack del menu
 	if (main_menu->startMenuSoundtrack == true) {
-		//update_animation->SoundEngine_soundtrack->stopAllSounds();
+
 		main_menu->startMenuSoundtrack = false;
 	}
 
