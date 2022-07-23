@@ -78,10 +78,6 @@ void game::init() {
 	//Se il game non è stato ancora inizializzato
 	if (gameInitialized == false) {
 
-		if (loadingGame->statusLoading == STATUS_LOADING_0) {
-			// init MAP
-		}
-
 		if (loadingGame->statusLoading == STATUS_LOADING_1) {
 			// init PLAYER
 			p->initPlayer();
@@ -90,17 +86,12 @@ void game::init() {
 			modelGameOver->loadModel("animation/gameover.obj");
 			arrow->loadModel("animation/triangle/TRY.obj");
 			trophy->loadModel("animation/trophy/trophy.obj");
-		}
-
-		if (loadingGame->statusLoading >= STATUS_LOADING_2 && loadingGame->statusLoading < STATUS_LOADING_5) {
-			cout << "*** Bot Models: Loaded" << endl;
+		
 		}
 
 		if (loadingGame->statusLoading == STATUS_LOADING_5) {
-			// init PATH
-			//initPathList();
-
-			gameInitialized = true;	//segnalo che l'init del game è stato completato completato
+			
+			gameInitialized = true;	//segnalo che l'init del game è stato completato
 			cout << "*** INIT GAME: COMPLETED" << endl;
 		}
 	}
