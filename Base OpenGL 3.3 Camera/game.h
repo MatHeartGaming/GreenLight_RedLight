@@ -242,12 +242,10 @@ void game::drawTrophy(Shader lightShader) {
 
 	glm::mat4 model = glm::mat4(UNIT);
 	model = glm::mat4(UNIT);
-	model = glm::translate(model, glm::vec3(x, 2.1f, z));
-	//model = glm::rotate(model, 90.0f, glm::vec3(0.0f, 0.0f, 1.0f)); // gameover rotate on x axis 
+	model = glm::translate(model, glm::vec3(x, 2.3f, z));
 	model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
 	lightShader.setMat4("model", model);
 	trophy->Draw(lightShader);
-
 }
 
 void game::draw(Shader simpleShader, Shader lightShader, Shader animShader, glm::mat4 view) {
@@ -265,4 +263,5 @@ void game::draw(Shader simpleShader, Shader lightShader, Shader animShader, glm:
 	if (p->players[p->userPlayerIndex].z <= -42) {
 		drawTrophy(lightShader);
 	}
+
 }
