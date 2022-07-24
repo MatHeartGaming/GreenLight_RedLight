@@ -39,7 +39,6 @@ void update::moveRight(player* p, Shader animShader) {
 	for (int i = 0; i < 456; i++) {
 		if (p->players[i].x < (ROOM_DIM_X1)) {
 			isColliding = false;
-			//p->setX(p->getX() + MOVE_STEP);
 		}
 		else {
 			isColliding = true;
@@ -51,7 +50,6 @@ void update::moveLeft(player* p, Shader animShader) {
 	for (int i = 0; i < 456; i++) {
 		if (p->players[i].x > (ROOM_DIM_X2)) {
 			isColliding = false;
-			//p->setX(p->getX() - MOVE_STEP);
 		}
 		else {
 			isColliding = true;
@@ -62,20 +60,19 @@ void update::moveLeft(player* p, Shader animShader) {
 void update::moveUp(player* p, Shader animShader) {
 	
 	for (int i = 0; i < 456; i++) {
-		if (p->players[i].z > (ROOM_DIM_Z1)) {
+		
+		if (p->players[i].z > (ROOM_DIM_Z1) && p->players[i].x > (ROOM_DIM_X2) && p->players[i].x < (ROOM_DIM_X1)) {
 			isColliding = false;
-			//p->setZ(p->getZ() - MOVE_STEP);
 		}
 		else {
 			isColliding = true;
-			//p->setX(p->getX());
 		}
 	}
 }
 
 void update::moveDown(player* p, Shader animShader) {
 	for (int i = 0; i < 456; i++) {
-		if (p->players[i].z < (ROOM_DIM_Z2)) {
+		if (p->players[i].z < (ROOM_DIM_Z2) && p->players[i].x >(ROOM_DIM_X2) && p->players[i].x < (ROOM_DIM_X1)) {
 			isColliding = false;
 			//p->setZ(p->getZ() + MOVE_STEP);
 		}
