@@ -10,7 +10,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Bump source\\commerc\\texture\\Body_normal.png
 map_Kd textures\\Body_CT.png
 
 newmtl UpperHandMaterial
@@ -22,7 +21,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Bump source\\commerc\\texture\\UpperHend_normal.png
 map_Kd textures\\UpperHend_CT.png
 
 newmtl hendMaterial
@@ -34,7 +32,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Bump source\\commerc\\texture\\Hend_normal.png
 map_Kd textures\\hend_CT.png
 
 newmtl lokotMaterial
@@ -57,5 +54,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Bump source\\commerc\\texture\\LowHend_normal.png
 map_Kd textures\\LowHend_CT.png

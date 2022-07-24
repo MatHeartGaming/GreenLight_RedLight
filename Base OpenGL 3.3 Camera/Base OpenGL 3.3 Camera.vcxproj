@@ -161,13 +161,7 @@ $(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
     <ClCompile Include="texture.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="fragment_anim_lights.fs" />
-    <None Include="fragment_simple.fs" />
-    <None Include="fragment_lights.fs" />
     <None Include="packages.config" />
-    <None Include="vertex_anim_lights.vs" />
-    <None Include="vertex_simple.vs" />
-    <None Include="vertex_lights.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="button.h" />

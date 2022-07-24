@@ -1,0 +1,48 @@
+﻿  main.cpp
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\shader_s.h(56,35): warning C4101: 'e': variabile locale senza riferimenti
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(78,20): warning C4305: 'inizializzazione': troncamento da 'double' a 'float'
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(234,45): warning C4244: '+=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(237,24): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(242,46): warning C4244: '-=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(294,16): warning C4244: 'inizializzazione': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(296,93): warning C4244: '+=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(299,16): warning C4244: 'inizializzazione': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(301,90): warning C4244: '+=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(304,92): warning C4244: '+=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(307,90): warning C4244: '-=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(311,89): warning C4244: '-=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\game.h(124,47): warning C4244: '+=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\game.h(127,29): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\game.h(132,48): warning C4244: '-=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\mainMenu.h(62,18): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\mainMenu.h(88,15): warning C4305: '=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\mainMenu.h(91,16): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\pauseMenu.h(60,84): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(169,16): warning C4305: '=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(170,16): warning C4305: '=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(172,32): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(173,31): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(176,16): warning C4305: '=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(177,14): warning C4305: '=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(179,69): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\update.h(180,69): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(66,16): warning C4305: '+=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(71,16): warning C4305: '-=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(76,16): warning C4305: '+=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(81,16): warning C4305: '-=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(86,16): warning C4305: '+=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(91,16): warning C4305: '-=': troncamento da 'double' a 'float'
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(109,23): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(110,23): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(112,24): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(113,24): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(252,20): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(253,20): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(255,21): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(256,21): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(313,38): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(314,35): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(421,10): warning C4244: 'argomento': conversione da 'double' a 'unsigned int'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(433,45): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(703,36): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+  Base OpenGL 3.3 Camera.vcxproj -> C:\Users\Rocchina Valanzano\Documents\GitHub\GreenLight_RedLight\Debug\GreenLightRedLight.exe

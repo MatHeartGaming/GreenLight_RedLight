@@ -21,7 +21,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Bump source\\commerc\\texture\\HairTale_normal.png
 map_Kd textures\\HairTale_CT.png
 
 newmtl MainHairMaterial.002
@@ -33,7 +32,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Bump source\\commerc\\texture\\MainHair_normal.png
 map_Kd textures\\MainHair_CT.png
 
 newmtl RuberMaterial.002
@@ -45,7 +43,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Bump source\\commerc\\texture\\Ruber_normal.png
 map_Kd textures\\Ruber_CT.png
 
 newmtl eyeMaterial.002

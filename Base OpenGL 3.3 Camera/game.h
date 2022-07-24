@@ -81,7 +81,7 @@ void game::init() {
 		if (loadingGame->statusLoading == STATUS_LOADING_1) {
 			// init PLAYER
 			p->initPlayer();
-			cout << "*** Players: Loaded -> Initialized" << endl;
+			cout << "Loading Players" << endl;
 			doll->initDoll();
 			modelGameOver->loadModel("animation/gameover.obj");
 			arrow->loadModel("animation/triangle/TRY.obj");
@@ -92,7 +92,7 @@ void game::init() {
 		if (loadingGame->statusLoading == STATUS_LOADING_5) {
 			
 			gameInitialized = true;	//segnalo che l'init del game è stato completato
-			cout << "*** INIT GAME: COMPLETED" << endl;
+			cout << "Loading Init Game" << endl;
 		}
 	}
 
@@ -161,7 +161,7 @@ void game::setShadersProperties(Shader simpleShader, Shader lightShader, Shader 
 	animShader.setVec3("light.position", lightPos);
 	animShader.setVec3("light.ambient", UNIT, UNIT, UNIT);
 	animShader.setVec3("light.diffuse", UNIT, UNIT, UNIT);
-	animShader.setVec3("light.specular", UNIT, UNIT, UNIT);
+	animShader.setVec3("light.specular", 0.7, 0.7, 0.7);
 
 
 	// ---- SIMPLE Shader ---- //
@@ -191,7 +191,7 @@ void game::setShadersProperties(Shader simpleShader, Shader lightShader, Shader 
 	lightShader.setVec3("light.position", lightPos);
 	lightShader.setVec3("light.ambient", 0.5f, 0.5f, 0.5f);
 	lightShader.setVec3("light.diffuse", 0.3f, 0.3f, 0.3f);
-	lightShader.setVec3("light.specular", UNIT, UNIT, UNIT);
+	lightShader.setVec3("light.specular", 0.7, 0.7, 0.7);
 	lightShader.setVec3("colormodel", UNIT, UNIT, UNIT);
 
 }

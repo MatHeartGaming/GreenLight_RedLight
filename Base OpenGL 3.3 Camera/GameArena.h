@@ -79,7 +79,7 @@ void GameArena::drawDoll(Shader animShader, Shader simpleShader, Shader lightSha
 
 	glm::mat4 lightProjection, lightView;
 	glm::mat4 lightSpaceMatrix;
-	lightProjection = glm::ortho(-10.0f, 10.0f, -49.0f, 49.0f, -50.0f, 27.0f);
+	lightProjection = glm::ortho(-10.0f, 10.0f, -50.0f, 50.0f, -50.0f, 27.0f);
 	
 	lightView = glm::lookAt(lightPos, glm::vec3(0.0f), glm::vec3(0.0, 0.0, 1.0));
 	
@@ -96,7 +96,7 @@ void GameArena::drawDoll(Shader animShader, Shader simpleShader, Shader lightSha
 
 
 	lightShader.use();
-	lightProjection = glm::ortho(-10.0f, 10.0f, -49.0f, 49.0f, 10.0f, 27.0f);
+	lightProjection = glm::ortho(-10.0f, 10.0f, -50.0f, 50.0f, 10.0f, 27.0f);
 	lightView = glm::lookAt(lightPos, glm::vec3(0.0f), glm::vec3(0.0, 0.0, 1.0));
 	lightSpaceMatrix = lightProjection * lightView;
 	lightShader.setMat4("lightSpaceMatrix", lightSpaceMatrix);

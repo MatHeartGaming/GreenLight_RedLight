@@ -35,7 +35,7 @@ void loading::init() {
 	statusLoading = 0.0f;
 
 	if (loadingInitialized == false) {
-		cout << "loadinginit" << endl;
+		cout << "Loading Init" << endl;
 		background = new cube(30.0f, 0.0f, 20.0f, glm::radians(90.0f), UNIT, 0.0f, 0.0f, 0.0f, 0.0f, -5.0f);
 
 		loading_boundary = new Model();

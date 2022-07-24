@@ -201,12 +201,9 @@ void ray_plane(glm::vec3 plane_normal_word, glm::vec3 plane_pos_word, glm::vec3 
 
 			float player_xpos = gameuno->getPlayer()->getX(); //coordinata x del player
 			float player_zpos = gameuno->getPlayer()->getZ(); //coordinata z del player
-			//cout << "*** PLAYER Position (X,Z): (" << player_xpos << ", " << player_zpos << ")" << endl;
-			//cout << "*** Mouse Position (X,Z): (" << p.x << ", " << p.z << ")" << endl;
 
 			gameuno->setMousePoint(p);
 			main_menu->setMousePoint(p);
-			//pause_menu->setMousePoint(p);
 
 		}
 
@@ -444,7 +441,7 @@ void renderLoading(Shader simpleShader) {
 		main_menu->startMenuSoundtrack = false;
 	}
 
-	cout << "gameuno->loadingGame->statusLoading" << gameuno->loadingGame->statusLoading << endl;
+	cout << "Loading " << gameuno->loadingGame->statusLoading << "%" << endl;
 	gameuno->loadingGame->draw(simpleShader, gameuno->loadingGame->statusLoading/13.2f); //draw della barra di caricamento
 
 	if (gameuno->loadingGame->statusLoading == 100.0f) { //quando statusLoading ha raggiunto il 100%
@@ -493,7 +490,7 @@ void render(Shader simpleShader, Shader lightShader, Shader animShader, Shader s
 	currentTime = glfwGetTime();
 
 		if (!gameuno->inGame && !gameuno->loadingGame->isLoading) {
-			main_menu->music->setSoundVolume(1.0);
+			//main_menu->music->setSoundVolume(1.0);
 			renderMainMenu(simpleShaderMenu, lightShaderMenu);
 		}
 		else if (!gameuno->inGame && gameuno->loadingGame->isLoading && !gameuno->loadingGame->drawLoadingBar) {
@@ -507,15 +504,15 @@ void render(Shader simpleShader, Shader lightShader, Shader animShader, Shader s
 			gameuno->loadingGame->statusLoading++;
 		}
 		else if (gameuno->inGame && !gameuno->loadingGame->isLoading && !gameuno->gamePause) {
-			main_menu->music->setSoundVolume(0.1);
+			//main_menu->music->setSoundVolume(0.1);
 			renderGame(simpleShader, lightShader, animShader);
 		}
 		else if (gameuno->inGame && !gameuno->loadingGame->isLoading && gameuno->gameOver) {
-			main_menu->music->setSoundVolume(1.0);
+			//main_menu->music->setSoundVolume(1.0);
 			renderPauseMenu(simpleShader, lightShader);
 		}
 		else if (gameuno->inGame && !gameuno->loadingGame->isLoading && gameuno->gamePause) {
-			main_menu->music->setSoundVolume(1.0);
+			//main_menu->music->setSoundVolume(1.0);
 			renderPauseMenu(simpleShader, lightShader);
 		}
 }
@@ -654,7 +651,7 @@ int main()
 
 	// configure depth map FBO
    // -----------------------
-	const unsigned int SHADOW_WIDTH = 4096, SHADOW_HEIGHT = 4096;
+	const unsigned int SHADOW_WIDTH = 1536, SHADOW_HEIGHT = 15360;
 	unsigned int depthMapFBO;
 	glGenFramebuffers(1, &depthMapFBO);
 	// create depth texture
@@ -682,7 +679,7 @@ int main()
 
 	glm::mat4 lightProjection, lightView;
 	glm::mat4 lightSpaceMatrix;
-	lightProjection = glm::ortho(-10.0f, 10.0f, -49.0f, 49.0f, -50.0f, 27.0f);
+	lightProjection = glm::ortho(-10.0f, 10.0f, -50.0f, 50.0f, 10.0f, 27.0f);
 	lightView = glm::lookAt(lightPos, glm::vec3(0.0f), glm::vec3(0.0, 0.0, 1.0));
 	lightSpaceMatrix = lightProjection * lightView;
 	animationShader.setMat4("lightSpaceMatrix", lightSpaceMatrix);
@@ -707,8 +704,6 @@ int main()
 	{
 		// input
 		processInput(window);
-
-		//cout << "X: " << gameuno->getPlayer()->getX() << ", Y: " << gameuno->getPlayer()->getY() << ", Z: " << gameuno->getPlayer()->getZ() << endl;
 
 		mat4 lightProjection, lightView;
 		mat4 lightSpaceMatrix;

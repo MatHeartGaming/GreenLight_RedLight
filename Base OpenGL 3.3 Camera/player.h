@@ -47,7 +47,7 @@ public:
 
 	float collisionDist = 1;
 	float acceleration = 1 / 2.34f;
-	float acceleration_Run = 1 / 1.5f;
+	float acceleration_Run = 1;// 1.5f;
 
 	float anglePlayer;
 
@@ -158,11 +158,11 @@ void player::loadMeshModel() {
 
 	if (animRand == 0) {
 		playerVictory_1.loadMesh("animation/player456/Victory.dae");
-		cout << "Animazione Standard" << endl;
+		cout << "Loaded Animation Standard" << endl;
 	}
 	else {
 		playerVictory_1.loadMesh("animation/player456/Breakdance_Ending.dae");
-		cout << "Animazione Break Dance" << endl;
+		cout << "Loaded Animation Break Dance" << endl;
 	}
 }
 

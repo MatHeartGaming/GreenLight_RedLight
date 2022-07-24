@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Shader Files">
-      <UniqueIdentifier>{24b6cdd6-f8bc-4b20-83df-2c1a0f274c27}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Modello">
       <UniqueIdentifier>{a32c58a2-ee89-4b3a-bd92-cbcc9e2ed1df}</UniqueIdentifier>
     </Filter>
@@ -45,24 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="fragment_anim_lights.fs">
-      <Filter>Shader Files</Filter>
-    </None>
-    <None Include="fragment_simple.fs">
-      <Filter>Shader Files</Filter>
-    </None>
-    <None Include="fragment_lights.fs">
-      <Filter>Shader Files</Filter>
-    </None>
-    <None Include="vertex_anim_lights.vs">
-      <Filter>Shader Files</Filter>
-    </None>
-    <None Include="vertex_simple.vs">
-      <Filter>Shader Files</Filter>
-    </None>
-    <None Include="vertex_lights.vs">
-      <Filter>Shader Files</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader_s.h">
