@@ -283,7 +283,7 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 				if (!gameuno->p->players[i].finish) {
 					if (gameuno->doll->animState == 1) {
 						if (gameuno->p->players[i].velocity > 0) {
-							if (gameuno->p->players[i].z > -42 && !gameuno->p->players[i].userControlled) {
+							if (gameuno->p->players[i].z > -42  /*&& !gameuno->p->players[i].userControlled*/) {
 								gameuno->p->players[i].dead = true;
 								gameuno->p->players[i].move = false;
 								deaths++;
@@ -330,17 +330,12 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 
 		}
 
-		// ------- SOUND ------- //
 		previousTime = currentTime;
 	}
 
-	// ------- CAMERA ------- //
-//	float x = gameuno->getPlayer()->getX();
-//	float z = gameuno->getPlayer()->getZ();
-
 	float x = gameuno->p->players[gameuno->p->userPlayerIndex].x;
 	float z = gameuno->p->players[gameuno->p->userPlayerIndex].z;
-	float z_doll = -100;
+	float z_doll = -43;
 
 	//coordinate camera
 	glm::vec3 pos_camera_mobile(x, MOBILE_CAMERA_OFFSET_Y, z + MOBILE_CAMERA_OFFSET_Z);
