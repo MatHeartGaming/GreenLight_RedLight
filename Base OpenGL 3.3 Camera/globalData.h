@@ -8,9 +8,9 @@ const float DELTA_TIME_START = 0.0f;
 const float LAST_FRAME_START = 0.0f;
 
 //CLEAR COLOR PARAM
-const float COLOR_R = 0.2f;
-const float COLOR_G = 0.3f;
-const float COLOR_B = 0.3f;
+const float COLOR_R = 0.0f;
+const float COLOR_G = 0.0f;
+const float COLOR_B = 0.0f;
 
 // RESOLUTIONS
 unsigned int SCR_WIDTH = 1024;

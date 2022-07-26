@@ -46,10 +46,8 @@ public:
 };
 
 void  GameArena::resetDoll() {
-
-	rotationAngle = 0;
+	rotationAngle = 180;
 	animTime = 1;
-
 }
 void GameArena::loadMeshModel() {
 	dollHead->loadModel("animation/bambola/Doll_Head.obj");
@@ -121,9 +119,6 @@ void GameArena::drawDoll(Shader animShader, Shader simpleShader, Shader lightSha
 	model = glm::scale(model, glm::vec3(UNIT * 0.5, UNIT * 0.5, UNIT * 0.5));
 	lightShader.setMat4("model", model);
 	dollHead->Draw(lightShader);
-
-
-
 }
 
 void GameArena::animate(float dTime) {

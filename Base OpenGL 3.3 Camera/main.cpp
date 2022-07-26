@@ -49,9 +49,6 @@ GLFWwindow* window;
 //Camera UP
 glm::vec3 up(UP_X, UP_Y, UP_Z);
 
-float xKey = 0;
-float yKey = 0;
-float zKey = 0;
 int deaths = 0;
 int winners = 0;
 
@@ -62,36 +59,6 @@ void processInput(GLFWwindow* window)
 		glfwSetWindowShouldClose(window, true);
 	}
 
-	if (glfwGetKey(window, GLFW_KEY_PAGE_UP) == GLFW_PRESS) {
-		zKey += 0.001;
-		printf("x = %f, y = %f, z = %f\n", xKey, yKey, zKey);
-	}
-
-	if (glfwGetKey(window, GLFW_KEY_PAGE_DOWN) == GLFW_PRESS) {
-		zKey -= 0.001;
-		printf("x = %f, y = %f, z = %f\n", xKey, yKey, zKey);
-	}
-
-	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
-		yKey += 0.001;
-		printf("x = %f, y = %f, z = %f\n", xKey, yKey, zKey);
-	}
-
-	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) {
-		yKey -= 0.001;
-		printf("x = %f, y = %f, z = %f\n", xKey, yKey, zKey);
-	}
-
-	if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) {
-		xKey += 0.001;
-		printf("x = %f, y = %f, z = %f\n", xKey, yKey, zKey);
-	}
-
-	if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) {
-		xKey -= 0.001;
-		printf("x = %f, y = %f, z = %f\n", xKey, yKey, zKey);
-	}
-
 	//Callback MENU
 	if (!gameuno->inGame || gameuno->gamePause) {
 		if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS) {
@@ -99,6 +66,7 @@ void processInput(GLFWwindow* window)
 				mouseSx = true;
 			}
 		}
+		// Al rilascio del tasto sinistro del mouse controlla la posizione del cursore e se era sopra un bottone dei menu
 		if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_RELEASE) {
 			if (mouseSx) {
 
@@ -139,6 +107,7 @@ void processInput(GLFWwindow* window)
 			buttonEsc = false;
 		}
 
+		// Non permette al player muoversi prima che la bambola si pronunci
 		if (!gameuno->doll->start) {
 			return;
 		}
@@ -152,7 +121,7 @@ void processInput(GLFWwindow* window)
 		}
 
 		if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
-			if (muoviSx != true) {
+			if (!muoviSx) {
 				moveDx = true;
 			}
 		}
@@ -161,7 +130,7 @@ void processInput(GLFWwindow* window)
 		}
 
 		if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
-			if (moveDx != true) {
+			if (!moveDx) {
 				muoviSx = true;
 			}
 		}
@@ -170,7 +139,7 @@ void processInput(GLFWwindow* window)
 		}
 
 		if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
-			if (muoviGiu != true) {
+			if (!muoviGiu) {
 				muoviSu = true;
 			}
 		}
@@ -179,7 +148,7 @@ void processInput(GLFWwindow* window)
 		}
 
 		if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
-			if (muoviSu != true) {
+			if (!muoviSu) {
 				muoviGiu = true;
 			}
 		}
@@ -198,13 +167,8 @@ void ray_plane(glm::vec3 plane_normal_word, glm::vec3 plane_pos_word, glm::vec3 
 		glm::vec3 p = origin + t * ray_word; //calcolo del punto intersecato p
 
 		if ((t >= 0.0f) && (p.z >= plane_pos_word.z - dim_square && p.z <= plane_pos_word.z + dim_square) && (p.x >= plane_pos_word.x - dim_square && p.x <= plane_pos_word.x + dim_square)) {
-
-			float player_xpos = gameuno->getPlayer()->getX(); //coordinata x del player
-			float player_zpos = gameuno->getPlayer()->getZ(); //coordinata z del player
-
 			gameuno->setMousePoint(p);
 			main_menu->setMousePoint(p);
-
 		}
 
 	}
@@ -251,7 +215,6 @@ void mouse_position() {
 
 	pause_menu->xPos = xpos;
 	pause_menu->yPos = ypos;
-
 }
 
 
@@ -318,27 +281,22 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 				}
 
 				if (!gameuno->p->players[i].finish) {
-					if (gameuno->doll->animState == 1) { // Forward
+					if (gameuno->doll->animState == 1) {
 						if (gameuno->p->players[i].velocity > 0) {
 							if (gameuno->p->players[i].z > -42 && !gameuno->p->players[i].userControlled) {
 								gameuno->p->players[i].dead = true;
 								gameuno->p->players[i].move = false;
 								deaths++;
 							}
-							else if (gameuno->p->players[i].userControlled && gameuno->p->players[i].z > -42 && (muoviGiu || muoviSu || muoviSx || moveDx)) {
-								gameuno->p->players[i].dead = true;
-								gameuno->p->players[i].move = false;
-								deaths++;
-							}
 						}
 
-						//if (!gameuno->p->players[i].userControlled) {
-							if ((rand() % 7000) == 0) {
+						if ((rand() % 7000) == 0) {
+							if (!gameuno->p->players[i].userControlled) {
 								gameuno->p->players[i].velocity = 0.5;
 							}
-						//}
+						}
 					}
-					else if (gameuno->doll->animState == 0) { // Moving Forward
+					else if (gameuno->doll->animState == 0) {
 						if (gameuno->p->players[i].velocity > 0) {
 							if (gameuno->p->players[i].z > -42) {
 								gameuno->p->players[i].move = false;
@@ -346,7 +304,7 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 						}
 						gameuno->p->deadStatePlay = 0;
 					}
-					else if (gameuno->doll->animState == 3) { // Forward
+					else if (gameuno->doll->animState == 3) {
 						gameuno->p->deadStatePlay = 0;
 						gameuno->p->players[i].move = true;
 					}

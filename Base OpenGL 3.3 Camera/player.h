@@ -47,7 +47,7 @@ public:
 
 	float collisionDist = 1;
 	float acceleration = 1 / 2.34f;
-	float acceleration_Run = 1;// 1.5f;
+	float acceleration_Run = 1 / 1.5;// 1.5f;
 
 	float anglePlayer;
 
@@ -311,7 +311,12 @@ void player::updateDynamics(float dTime) {
 				players[i].velocity -= acceleration * dTime * (0.75 + 0.5 * (rand() % 100) / 100.0f);
 			}
 			else if (players[i].velocity > 0 && players[i].userControlled) {
-				players[i].velocity = 0;
+				if ((players[i].x > (ROOM_DIM_X2) && players[i].x < (ROOM_DIM_X1))) {
+					players[i].velocity -= acceleration_Run * dTime * (0.75 + 0.5 * (rand() % 100) / 10.0f);
+				}
+				else {
+					players[i].velocity = 0;
+				}
 			}
 		}
 	}
@@ -448,9 +453,6 @@ void player::animate(float dTime) {
 
 			if (players[i].animationTime_playerDying > 4) {
 				players[i].animationTime_playerDying = 4;
-				if (players[i].userControlled) {
-					//gameuno->gameOver = true;
-				}
 			}
 		}
 
