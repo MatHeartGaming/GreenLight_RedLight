@@ -15,7 +15,6 @@ C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLigh
 C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(311,89): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(315,93): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(389,29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(432,34): warning C4305: 'argument': truncation from 'double' to 'irrklang::ik_f32'
 C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(528,39): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
 C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(538,39): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
 C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\player.h(548,40): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
@@ -51,7 +50,7 @@ C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLigh
 C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(274,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(371,10): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
 C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(383,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(460,40): warning C4305: 'argument': truncation from 'double' to 'irrklang::ik_f32'
-C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(653,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(461,40): warning C4305: 'argument': truncation from 'double' to 'irrklang::ik_f32'
+C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\Base OpenGL 3.3 Camera\main.cpp(654,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
   Base OpenGL 3.3 Camera.vcxproj -> C:\Users\Matteo\OneDrive\Desktop\Matteo\GreenLight_RedLight_Definitive\GreenLight_RedLight\x64\Release\GreenLightRedLight.exe

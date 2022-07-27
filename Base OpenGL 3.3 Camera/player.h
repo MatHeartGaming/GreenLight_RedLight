@@ -75,7 +75,7 @@ public:
 	float startTime = 20;
 	float curTime = 0;
 
-	float volumeLevel = 0.1;
+	float volumeLevel = 0.8;
 
 	//prototipi
 	void drawPlayer(Shader animShader, Shader simpleShader, glm::vec3 mousePoint, Shader lightShader); //disegna il player
@@ -429,7 +429,7 @@ void player::animate(float dTime) {
 				players[i].deadState = 1;
 
 				if (deadStatePlay == 0) {
-					audioEng->setSoundVolume(0.8);
+					audioEng->setSoundVolume(volumeLevel);
 					audioEng->play2D("audio/Shot2.mp3", false);
 
 					deadStatePlay = 1;
