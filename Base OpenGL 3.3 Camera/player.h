@@ -170,6 +170,7 @@ void player::initPlayer() {
 
 	resetPlayer();
 	loadMeshModel();
+
 	initPlayers();
 
 	for (int i = 0; i < 350; i++) {

@@ -177,6 +177,7 @@ $(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
     <ClInclude Include="texture.h" />
     <ClInclude Include="update.h" />
     <ClInclude Include="updateAnimation.h" />
+    <ClInclude Include="utility.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="shader_s.h" />
     <ClInclude Include="GameArena.h" />

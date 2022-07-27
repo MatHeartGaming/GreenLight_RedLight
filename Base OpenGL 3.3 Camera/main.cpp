@@ -443,7 +443,7 @@ void render(Shader simpleShader, Shader lightShader, Shader animShader, Shader s
 	currentTime = glfwGetTime();
 
 		if (!gameuno->inGame && !gameuno->loadingGame->isLoading) {
-			main_menu->music->setSoundVolume(1.0);
+			main_menu->music->setSoundVolume(0.5);
 			renderMainMenu(simpleShaderMenu, lightShaderMenu);
 		}
 		else if (!gameuno->inGame && gameuno->loadingGame->isLoading && !gameuno->loadingGame->drawLoadingBar) {
@@ -451,7 +451,6 @@ void render(Shader simpleShader, Shader lightShader, Shader animShader, Shader s
 			gameuno->loadingGame->drawLoadingBar = true;
 		}
 		else if (!gameuno->inGame && gameuno->loadingGame->isLoading && gameuno->loadingGame->drawLoadingBar) {
-			main_menu->music->setSoundVolume(0.5);
 			renderLoading(simpleShader);
 			gameuno->init();
 			gameuno->loadingGame->drawLoadingBar = false;
@@ -550,10 +549,14 @@ int main()
 	glfwWindowHint(GLFW_SAMPLES, 8);
 	glEnable(GL_MULTISAMPLE);
 
-	//Pause menu textures
+	// caricamento texture
+	
 	gameuno->loadingGame->texture_background = loadtexture("texture/Squid_loading.jpg", false, false);
+
 	main_menu->texture_splash = loadtexture("texture/SplashScreen.png", false, false);
 	main_menu->texture_background = loadtexture("texture/MenuSquidGame.jpg", false, false);
+
+	//Pause menu textures
 	pause_menu->texture_background = main_menu->texture_background;
 	pause_menu->texture_gameover = loadtexture("texture/gameover2.png", true, false);
 	pause_menu->texture_you_win = loadtexture("texture/you_win2.jpg", false, false);
@@ -644,6 +647,9 @@ int main()
 	lightShader.setInt("diffuseTexture", 1);
 	lightShader.setInt("shadowMap", 0);
 
+	// lighting info
+	// -------------
+	
 	main_menu->TimeStart = glfwGetTime();
 
 	// render loop
@@ -652,7 +658,11 @@ int main()
 		// input
 		processInput(window);
 
+		mat4 lightProjection, lightView;
 		mat4 lightSpaceMatrix;
+		float near_plane = -500.0f, far_plane = 500.0f;
+		lightProjection = ortho(-500.0f, 500.0f, -500.0f, 500.0f, near_plane, far_plane);
+		lightView = lookAt(lightPos, vec3(0.0f), vec3(0.0, 0.0, 1.0));
 		lightSpaceMatrix = glm::mat4(UNIT) ;
 
 		animDepthShader.use();

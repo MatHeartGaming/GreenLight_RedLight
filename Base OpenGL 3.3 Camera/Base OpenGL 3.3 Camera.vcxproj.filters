@@ -68,6 +68,9 @@
     <ClInclude Include="mesh.h">
       <Filter>Header Files\Tool</Filter>
     </ClInclude>
+    <ClInclude Include="utility.h">
+      <Filter>Header Files\Tool</Filter>
+    </ClInclude>
     <ClInclude Include="updateAnimation.h">
       <Filter>Header Files\Controllo</Filter>
     </ClInclude>
