@@ -7,16 +7,6 @@
 #include "mainMenu.h"
 #include "pauseMenu.h"
 
-/* classe Update in cui vengono gestiti tutti
-gli aggiornamenti relativi allo stato degli 
-oggetti in game e dei menù:
-	a) movimento e collisioni del player
-	b) mira e shot
-	c) movimento e collisioni dei bot
-	d) attacco dei bot
-	e) click dei bottoni del main menù e pause menù 
-*/
-
 class update {
 public:
 
