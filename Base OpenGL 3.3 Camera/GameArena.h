@@ -171,7 +171,7 @@ void GameArena::animate(float dTime) {
 			animState = 0;
 			animTime = headRotationTime;
 			SoundEngine_effect->setSoundVolume(volumeLevel);
-			SoundEngine_effect->play2D("audio/RedLight.mp3", false);
+			SoundEngine_effect->play2D("audio/RedLight2.mp3", false);
 		}
 	}
 

@@ -430,7 +430,7 @@ void player::animate(float dTime) {
 
 				if (deadStatePlay == 0) {
 					audioEng->setSoundVolume(0.8);
-					audioEng->play2D("audio/Shot.mp3", false);
+					audioEng->play2D("audio/Shot2.mp3", false);
 
 					deadStatePlay = 1;
 				}
@@ -443,7 +443,7 @@ void player::animate(float dTime) {
 
 					if ((i % 3) == 0) {
 						audioEng->setSoundVolume(volumeLevel);
-						audioEng->play2D("audio/Scream.mp3", false);
+						audioEng->play2D("audio/Scream2.mp3", false);
 					}
 					
 				}
