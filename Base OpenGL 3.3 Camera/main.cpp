@@ -283,7 +283,7 @@ void renderGame(Shader simpleShader, Shader lightShader, Shader animShader) {
 				if (!gameuno->p->players[i].finish) {
 					if (gameuno->doll->animState == 1) {
 						if (gameuno->p->players[i].velocity > 0) {
-							if (gameuno->p->players[i].z > -42  /*&& !gameuno->p->players[i].userControlled*/) {
+							if (gameuno->p->players[i].z > -42  && !gameuno->p->players[i].userControlled) {
 								gameuno->p->players[i].dead = true;
 								gameuno->p->players[i].move = false;
 								deaths++;
